@@ -20,7 +20,7 @@
 namespace Soldunzh {
     public class Application : Adw.Application {
         public Application () {
-            Object (application_id: "io.github.lainsce.Soldunzh", flags: ApplicationFlags.FLAGS_NONE);
+            Object (application_id: Config.APP_ID);
         }
 
         construct {
@@ -32,6 +32,11 @@ namespace Soldunzh {
             this.add_action_entries (action_entries, this);
             this.set_accels_for_action ("app.quit", {"<primary>q"});
             this.set_accels_for_action ("app.help_overlay", {"<Ctrl>question"});
+        }
+
+        public override void startup () {
+            resource_base_path = "/io/github/lainsce/Soldunzh";
+            base.startup ();
         }
 
         public override void activate () {

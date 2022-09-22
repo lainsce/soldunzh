@@ -15,7 +15,7 @@
             <li>♦️ gives you shield points; A shield absorbs the damage difference between the shield value and that of the attacked monster's value. Shields can only defend against monsters in descending value and if you use a shield on a monster with higher or equal value to the previous, it will break. Broken shields leave you unarmored, and you take full damage. Folding shield card will always replace a previously equipped shield. Shields are equal to their value and face cards (V,Q,K,A) each are equal to 11.</li>
             <li>♣️ &amp; ♠️ are monsters; monster cards are equal to their value, and face cards are as follows V is 11, Q is 13, K is 15, A is 17. </li>
             <li>You may escape a room. When escaping, the remaining cards are put back at the end of the deck.</li>
-            <li>Beware of the two Soldunzhers, they can end your run early. Be prepared beforehand.</li>
+            <li>Beware of the Soldunzhers, they can end your run early. Be prepared beforehand.</li>
         </ul>
     </description>
     <provides>

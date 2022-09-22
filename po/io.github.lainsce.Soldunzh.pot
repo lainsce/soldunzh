@@ -1,0 +1,320 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the io.github.lainsce.Soldunzh package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: io.github.lainsce.Soldunzh\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-09-22 16:24-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: data/io.github.lainsce.Soldunzh.desktop.in:3
+msgid "Soldunzh"
+msgstr ""
+
+#: data/io.github.lainsce.Soldunzh.appdata.xml.in:7
+msgid "Venture through perilous lands"
+msgstr ""
+
+#: data/io.github.lainsce.Soldunzh.appdata.xml.in:9
+msgid ""
+"A dungeon inside a standard deck of cards. There's 4 cards in the start, "
+"which is a room, room ends when all cards there are folded."
+msgstr ""
+
+#: data/io.github.lainsce.Soldunzh.appdata.xml.in:14
+msgid ""
+"♥️ gives you health; drinking multiple potions in a row will make you sick "
+"and result in no extra healing, only the first potion's value will be gained "
+"in HP. Potions are equal to their value and face cards (V,Q,K,A) each are "
+"equal to 11"
+msgstr ""
+
+#: data/io.github.lainsce.Soldunzh.appdata.xml.in:15
+msgid ""
+"♦️ gives you shield points; A shield absorbs the damage difference between "
+"the shield value and that of the attacked monster's value. Shields can only "
+"defend against monsters in descending value and if you use a shield on a "
+"monster with higher or equal value to the previous, it will break. Broken "
+"shields leave you unarmored, and you take full damage. Folding shield card "
+"will always replace a previously equipped shield. Shields are equal to their "
+"value and face cards (V,Q,K,A) each are equal to 11."
+msgstr ""
+
+#: data/io.github.lainsce.Soldunzh.appdata.xml.in:16
+msgid ""
+"♣️ &amp; ♠️ are monsters; monster cards are equal to their value, and face "
+"cards are as follows V is 11, Q is 13, K is 15, A is 17."
+msgstr ""
+
+#: data/io.github.lainsce.Soldunzh.appdata.xml.in:17
+msgid ""
+"You may escape a room. When escaping, the remaining cards are put back at "
+"the end of the deck."
+msgstr ""
+
+#: data/io.github.lainsce.Soldunzh.appdata.xml.in:18
+msgid ""
+"Beware of the Soldunzhers, they can end your run early. Be prepared "
+"beforehand."
+msgstr ""
+
+#: data/io.github.lainsce.Soldunzh.appdata.xml.in:55
+msgid "Release: Soldunzh Awaits"
+msgstr ""
+
+#: data/io.github.lainsce.Soldunzh.appdata.xml.in:57
+msgid "First release"
+msgstr ""
+
+#: data/ui/keys.ui:11
+msgctxt "shortcut window"
+msgid "General"
+msgstr ""
+
+#: data/ui/keys.ui:14
+msgctxt "shortcut window"
+msgid "Show Shortcuts"
+msgstr ""
+
+#: data/ui/keys.ui:20
+msgctxt "shortcut window"
+msgid "Quit"
+msgstr ""
+
+#: src/window.vala:386
+msgid "A Journey Is Happening"
+msgstr ""
+
+#: src/window.vala:387
+msgid "Abandon the journey and try again?"
+msgstr ""
+
+#: src/window.vala:388 src/board.vala:141 src/player.vala:32
+msgid "Cancel"
+msgstr ""
+
+#: src/window.vala:389
+msgid "Abandon"
+msgstr ""
+
+#: src/board.vala:139
+msgid "You Won!"
+msgstr ""
+
+#: src/board.vala:140
+msgid "The player conquered Soldunzh."
+msgstr ""
+
+#: src/board.vala:142
+msgid "New Game"
+msgstr ""
+
+#: src/deck.vala:4 src/deck.vala:14 src/deck.vala:15 src/deck.vala:16
+msgid "White Mage"
+msgstr ""
+
+#: src/deck.vala:5 src/deck.vala:6
+msgid "Small Potion"
+msgstr ""
+
+#: src/deck.vala:7 src/deck.vala:8 src/deck.vala:9 src/deck.vala:10
+#: src/deck.vala:11
+msgid "Medium Potion"
+msgstr ""
+
+#: src/deck.vala:12 src/deck.vala:13
+msgid "Large Potion"
+msgstr ""
+
+#: src/deck.vala:18 src/deck.vala:28 src/deck.vala:29 src/deck.vala:30
+msgid "Red Mage"
+msgstr ""
+
+#: src/deck.vala:19 src/deck.vala:20
+msgid "Buckler"
+msgstr ""
+
+#: src/deck.vala:21 src/deck.vala:22 src/deck.vala:23 src/deck.vala:24
+#: src/deck.vala:25
+msgid "Shield"
+msgstr ""
+
+#: src/deck.vala:26 src/deck.vala:27
+msgid "Large Shield"
+msgstr ""
+
+#: src/deck.vala:32 src/deck.vala:45
+msgid "Empress"
+msgstr ""
+
+#: src/deck.vala:33
+msgid "Rat"
+msgstr ""
+
+#: src/deck.vala:34
+msgid "Bat"
+msgstr ""
+
+#: src/deck.vala:35
+msgid "Imp"
+msgstr ""
+
+#: src/deck.vala:36
+msgid "Goblin"
+msgstr ""
+
+#: src/deck.vala:37
+msgid "Orc"
+msgstr ""
+
+#: src/deck.vala:38
+msgid "Ogre"
+msgstr ""
+
+#: src/deck.vala:39
+msgid "Beholder"
+msgstr ""
+
+#: src/deck.vala:40
+msgid "Medusa"
+msgstr ""
+
+#: src/deck.vala:41
+msgid "Demon"
+msgstr ""
+
+#: src/deck.vala:42 src/deck.vala:55
+msgid "Consort"
+msgstr ""
+
+#: src/deck.vala:43 src/deck.vala:56
+msgid "Queen"
+msgstr ""
+
+#: src/deck.vala:44 src/deck.vala:57
+msgid "Regent"
+msgstr ""
+
+#: src/deck.vala:46
+msgid "Slime"
+msgstr ""
+
+#: src/deck.vala:47
+msgid "Tunneler"
+msgstr ""
+
+#: src/deck.vala:48
+msgid "Fiend"
+msgstr ""
+
+#: src/deck.vala:49
+msgid "Drake"
+msgstr ""
+
+#: src/deck.vala:50
+msgid "Specter"
+msgstr ""
+
+#: src/deck.vala:51
+msgid "Ghost"
+msgstr ""
+
+#: src/deck.vala:52
+msgid "Elemental"
+msgstr ""
+
+#: src/deck.vala:53
+msgid "Witch"
+msgstr ""
+
+#: src/deck.vala:54
+msgid "Familiar"
+msgstr ""
+
+#: src/deck.vala:58 src/deck.vala:59
+msgid "Soldunzher"
+msgstr ""
+
+#: src/player.vala:30
+msgid "Game Over"
+msgstr ""
+
+#: src/player.vala:31
+msgid "The player is lost in the mists of Soldunzh."
+msgstr ""
+
+#: src/player.vala:33
+msgid "Try Again"
+msgstr ""
+
+#: src/player.vala:75
+msgid "Your shield broke."
+msgstr ""
+
+#: src/player.vala:81
+msgid "Your shield absorbed the blow."
+msgstr ""
+
+#. Timeline
+#: src/player.vala:94
+msgid "The "
+msgstr ""
+
+#: src/player.vala:94
+msgid " killed you."
+msgstr ""
+
+#: src/player.vala:99
+msgid "Battled"
+msgstr ""
+
+#: src/player.vala:99
+msgid "Killed"
+msgstr ""
+
+#: src/player.vala:100
+msgid " the "
+msgstr ""
+
+#: src/player.vala:115
+msgid "Equipped shield."
+msgstr ""
+
+#: src/player.vala:126
+msgid "Wasted potion!"
+msgstr ""
+
+#: src/player.vala:135
+msgid "Drank potion."
+msgstr ""
+
+#: src/player.vala:142
+msgid "Cannot escape the room!"
+msgstr ""
+
+#: src/player.vala:153
+msgid "Escaped the room!"
+msgstr ""
+
+#: src/player.vala:173 src/player.vala:181
+msgid "Monsters present."
+msgstr ""
+
+#: src/player.vala:180
+msgid "Cards remain."
+msgstr ""
+
+#. Hard
+#: src/player.vala:187
+msgid "Cannot escape (Expert Difficulty)."
+msgstr ""

@@ -13,10 +13,10 @@ add_project_arguments([
 )
 
 if get_option('development')
-  app_id = 'io.github.lainsce.Khronos.Devel'
+  app_id = 'io.github.lainsce.Soldunzh.Devel'
   name_suffix = ' (Development)'
 else
-  app_id = 'io.github.lainsce.Khronos'
+  app_id = 'io.github.lainsce.Soldunzh'
   name_suffix = ''
 endif
 

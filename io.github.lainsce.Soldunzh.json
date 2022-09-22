@@ -1,5 +1,5 @@
 {
-    "app-id" : "io.github.lainsce.Soldunzh",
+    "app-id" : "io.github.lainsce.Soldunzh.Devel",
     "runtime" : "org.gnome.Platform",
     "runtime-version" : "master",
     "sdk" : "org.gnome.Sdk",
@@ -7,8 +7,10 @@
         "org.freedesktop.Sdk.Extension.vala"
     ],
     "command" : "io.github.lainsce.Soldunzh",
+    "desktop-file-name-suffix" : " (Development)",
     "finish-args" : [
         "--share=ipc",
+        "--filesystem=xdg-run/gvfsd",
         "--socket=fallback-x11",
         "--device=dri",
         "--socket=wayland"
@@ -34,10 +36,13 @@
             "name" : "soldunzh",
             "builddir" : true,
             "buildsystem" : "meson",
+            "config-opts" : [
+                "-Ddevelopment=true"
+            ],
             "sources" : [
                 {
-                    "type" : "git",
-                    "url" : "file:///home/lains/Projects"
+                    "type" : "dir",
+                    "path" : "."
                 }
             ]
         }

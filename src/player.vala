@@ -72,13 +72,13 @@ namespace Soldunzh {
               if (this.shield.is_damaged () == true && attack_value >= this.shield.break_limit) {
                 this.shield.val = 0.0;
                 this.shield.break_limit = 0.0;
-                shield_event = "Your shield broke.";
+                shield_event = (_("Your shield broke."));
                 mw.timeline.set_text (shield_event);
                 this.shield.update(this.shield.val);
               } else {
                 this.shield.break_limit = attack_value;
                 damages = attack_value > this.shield.val ? (int)Math.fabs(attack_value - this.shield.val) : 0;
-                shield_event = "Your shield absorbed the blow.";
+                shield_event = (_("Your shield absorbed the blow."));
                 mw.timeline.set_text (shield_event);
                 this.shield.update(this.shield.val);
               }
@@ -91,13 +91,13 @@ namespace Soldunzh {
 
             // Timeline
             if (this.health.val < 0.01) {
-              mw.msg = "The " + card.name + " killed you.";
+              mw.msg = (_("The ")) + card.name + (_(" killed you."));
 		      mw.timeline.set_text (mw.msg);
               mw.board.dungeon_failed ();
               this.update(mw, this.health.val, this.shield.val, this.exp.val);
             } else {
-              string oc = damages > 0.0 ? "Battled" : "Killed";
-              mw.msg = oc + " the " + card.name + ".";
+              string oc = damages > 0.0 ? (_("Battled")) : (_("Killed"));
+              mw.msg = oc + (_(" the ")) + card.name + ".";
 		      mw.timeline.set_text (mw.msg);
             }
 
@@ -112,7 +112,7 @@ namespace Soldunzh {
             this.shield.val = shield_value;
             this.shield.break_limit = 0.0;
 
-            mw.msg = "Equipped shield.";
+            mw.msg = (_("Equipped shield."));
 		    mw.timeline.set_text (mw.msg);
 
             this.shield.val = shield_value ;
@@ -123,7 +123,7 @@ namespace Soldunzh {
 
         public void drink_potion (double potion_value) {
             if (this.can_drink == false) {
-              mw.msg = "Wasted potion!";
+              mw.msg = (_("Wasted potion!"));
 		      mw.timeline.set_text (mw.msg);
               return;
             }
@@ -132,14 +132,14 @@ namespace Soldunzh {
             this.health.val = new_health;
             this.can_drink = false;
             mw.is_complete = false;
-            mw.msg = "Drank potion.";
+            mw.msg = (_("Drank potion."));
 		    mw.timeline.set_text (mw.msg);
             this.health.update(this.health.val);
         }
 
         public void escape_room () {
             if (this.can_escape (mw) != true) {
-                mw.msg = "Cannot escape the room!";
+                mw.msg = (_("Cannot escape the room!"));
 		        mw.timeline.set_text (mw.msg);
                 this.exp.val -= 0.02;
                 return;
@@ -150,7 +150,7 @@ namespace Soldunzh {
 
             mw.board.return_cards();
             mw.board.enter_room();
-            mw.msg = "Escaped the room!";
+            mw.msg = (_("Escaped the room!"));
 		    mw.timeline.set_text (mw.msg);
             mw.card1.remove_css_class ("flipped");
             mw.card2.remove_css_class ("flipped");
@@ -170,21 +170,21 @@ namespace Soldunzh {
             // Easy
             if (mw.difficulty == 0) {
               if (!this.has_escaped) { return true; }
-              if (mw.board.has_monsters()) { mw.msg = "Monsters present."; mw.timeline.set_text (mw.msg); return false; }
+              if (mw.board.has_monsters()) { mw.msg = (_("Monsters present.")); mw.timeline.set_text (mw.msg); return false; }
               return true;
             }
 
             // Normal
             if (mw.difficulty == 1) {
               if (!this.has_escaped) { return true; }
-              if (mw.board.cards_flipped().size != 3) { mw.msg = "Cards remain."; mw.timeline.set_text (mw.msg); return false; }
-              if (mw.board.has_monsters()) { mw.msg = "Monsters present."; mw.timeline.set_text (mw.msg); return false; }
+              if (mw.board.cards_flipped().size != 3) { mw.msg = (_("Cards remain.")); mw.timeline.set_text (mw.msg); return false; }
+              if (mw.board.has_monsters()) { mw.msg = (_("Monsters present.")); mw.timeline.set_text (mw.msg); return false; }
               return true;
             }
 
             // Hard
             if (mw.difficulty == 2) {
-              mw.msg = "Cannot escape (Expert Difficulty).";
+              mw.msg = (_("Cannot escape (Expert Difficulty)."));
               mw.timeline.set_text (mw.msg);
               return false;
             }
