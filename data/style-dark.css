@@ -1,16 +1,29 @@
 @define-color accent_color #F66151;
 @define-color accent_bg_color #F66151;
-@define-color window_bg_color #000;
-@define-color headerbar_bg_color #080808;
+@define-color window_bg_color #101010;
+@define-color headerbar_bg_color #181818;
 
 .gauge_xp trough progress {
-  background: #fff;
+  background: #eee;
 }
 
 .flipped {
-  background: #111;
+  background: #222;
 }
 
 .soldunzh {
+  background: #101010;
+}
+
+.card {
+  background: #eaeaea;
+  color: #101010;
+  opacity: 0.8;
+}
+
+.timeline {
   background: #000;
+  color: #fff;
+  box-shadow: 0 0 2px 0 #AAA;
+  font-family: monospace;
 }

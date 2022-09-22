@@ -175,9 +175,10 @@
 																				<property name="width-request">200</property>
 																				<child>
 																					<object class="GtkLabel" id="card1_strength">
-																						<property name="margin-top">6</property>
+																						<property name="margin-top">12</property>
 																						<property name="margin-start">12</property>
 																						<property name="halign">start</property>
+																					  <property name="valign">start</property>
 																						<style>
 																							<class name="title-1"/>
 																						</style>
@@ -193,6 +194,8 @@
 																				<child>
 																					<object class="GtkLabel" id="card1_name">
 																						<property name="halign">center</property>
+																					  <property name="valign">end</property>
+																					  <property name="margin-bottom">12</property>
 																						<style>
 																							<class name="title"/>
 																						</style>
@@ -214,9 +217,10 @@
 																				<property name="width-request">200</property>
 																				<child>
 																					<object class="GtkLabel" id="card2_strength">
-																						<property name="margin-top">6</property>
+																						<property name="margin-top">12</property>
 																						<property name="margin-start">12</property>
 																						<property name="halign">start</property>
+																					  <property name="valign">start</property>
 																						<style>
 																							<class name="title-1"/>
 																						</style>
@@ -232,6 +236,8 @@
 																				<child>
 																					<object class="GtkLabel" id="card2_name">
 																						<property name="halign">center</property>
+																					  <property name="valign">end</property>
+																					  <property name="margin-bottom">12</property>
 																						<style>
 																							<class name="title"/>
 																						</style>
@@ -253,9 +259,10 @@
 																				<property name="width-request">200</property>
 																				<child>
 																					<object class="GtkLabel" id="card3_strength">
-																						<property name="margin-top">6</property>
+																						<property name="margin-top">12</property>
 																						<property name="margin-start">12</property>
 																						<property name="halign">start</property>
+																					  <property name="valign">start</property>
 																						<style>
 																							<class name="title-1"/>
 																						</style>
@@ -271,6 +278,8 @@
 																				<child>
 																					<object class="GtkLabel" id="card3_name">
 																						<property name="halign">center</property>
+																					  <property name="valign">end</property>
+																					  <property name="margin-bottom">12</property>
 																						<style>
 																							<class name="title"/>
 																						</style>
@@ -292,9 +301,10 @@
 																				<property name="width-request">200</property>
 																				<child>
 																					<object class="GtkLabel" id="card4_strength">
-																						<property name="margin-top">6</property>
+																						<property name="margin-top">12</property>
 																						<property name="margin-start">12</property>
 																						<property name="halign">start</property>
+																					  <property name="valign">start</property>
 																						<style>
 																							<class name="title-1"/>
 																						</style>
@@ -310,6 +320,8 @@
 																				<child>
 																					<object class="GtkLabel" id="card4_name">
 																						<property name="halign">center</property>
+																					  <property name="valign">end</property>
+																					  <property name="margin-bottom">12</property>
 																						<style>
 																							<class name="title"/>
 																						</style>
@@ -381,6 +393,7 @@
 																		</child>
 																		<style>
 																			<class name="card"/>
+																		  <class name="timeline"/>
 																		</style>
 																	</object>
 																</child>

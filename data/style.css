@@ -1,7 +1,7 @@
 @define-color accent_color #F66151;
 @define-color accent_bg_color #F66151;
-@define-color window_bg_color #eee;
-@define-color headerbar_bg_color #e8e8e8;
+@define-color window_bg_color #fff;
+@define-color headerbar_bg_color #fafafa;
 
 .fab {
   box-shadow: 0 4px 8px 4px alpha(@accent_color, 0.15);
@@ -13,7 +13,7 @@
 }
 
 .gauge_hp trough progress {
-  background: #f00;
+  background: #c03820;
 }
 .gauge_sp trough progress {
   background: #75dec2;
@@ -23,7 +23,7 @@
 }
 
 .destructive-label {
-  color: #F00;
+  color: #c03820;
 }
 
 .flipped {
@@ -38,5 +38,11 @@
 }
 
 .soldunzh {
-  background: #eee;
+  background: #fff;
+}
+
+.timeline {
+  background: #fff;
+  color: #000;
+  font-family: monospace;
 }
