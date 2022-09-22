@@ -1,0 +1,16 @@
+@define-color accent_color #F66151;
+@define-color accent_bg_color #F66151;
+@define-color window_bg_color #000;
+@define-color headerbar_bg_color #080808;
+
+.gauge_xp trough progress {
+  background: #fff;
+}
+
+.flipped {
+  background: #111;
+}
+
+.soldunzh {
+  background: #000;
+}

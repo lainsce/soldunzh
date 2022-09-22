@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gresources>
+  <gresource prefix="/io/github/lainsce/Soldunzh">
+    <file preprocess="xml-stripblanks" alias="window.ui">ui/window.ui</file>
+    <file preprocess="xml-stripblanks" alias="keys.ui">ui/keys.ui</file>
+    <file alias="style.css">style.css</file>
+    <file alias="style-dark.css">style-dark.css</file>
+  </gresource>
+  <gresource prefix="/io/github/lainsce/Soldunzh/icons">
+      <file alias="scalable/actions/new-game-symbolic.svg">icons/new-game-symbolic.svg</file>
+      <file alias="scalable/actions/run-room-symbolic.svg">icons/run-room-symbolic.svg</file>
+    </gresource>
+</gresources>

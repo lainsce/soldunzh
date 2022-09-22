@@ -1,0 +1,6 @@
+data/io.github.lainsce.Soldunzh.desktop.in
+data/io.github.lainsce.Soldunzh.appdata.xml.in
+data/io.github.lainsce.Soldunzh.gschema.xml
+src/main.vala
+src/window.vala
+src/window.ui

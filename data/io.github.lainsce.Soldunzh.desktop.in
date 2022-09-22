@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Soldunzh
+Exec=io.github.lainsce.Soldunzh
+Icon=io.github.lainsce.Soldunzh
+Terminal=false
+Type=Application
+Categories=GTK;Games;
+StartupNotify=true

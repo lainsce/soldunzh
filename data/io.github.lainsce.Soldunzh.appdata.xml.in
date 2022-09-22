@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+    <id>io.github.lainsce.Soldunzher</id>
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>GPL-3.0+</project_license>
+    <name translatable="no">Soldunzher</name>
+    <summary>Venture through perilous lands</summary>
+    <description>
+        <p>
+          A dungeon inside a standard deck of cards.
+          There's 4 cards in the start, which is a room, room ends when all cards there are folded.
+        </p>
+        <ul>
+            <li>♥️ gives you health; drinking multiple potions in a row will make you sick and result in no extra healing, only the first potion's value will be gained in HP. Potions are equal to their value and face cards (V,Q,K,A) each are equal to 11</li>
+            <li>♦️ gives you shield points; A shield absorbs the damage difference between the shield value and that of the attacked monster's value. Shields can only defend against monsters in descending value and if you use a shield on a monster with higher or equal value to the previous, it will break. Broken shields leave you unarmored, and you take full damage. Folding shield card will always replace a previously equipped shield. Shields are equal to their value and face cards (V,Q,K,A) each are equal to 11.</li>
+            <li>♣️ &amp; ♠️ are monsters; monster cards are equal to their value, and face cards are as follows V is 11, Q is 13, K is 15, A is 17. </li>
+            <li>You may escape a room. When escaping, the remaining cards are put back at the end of the deck.</li>
+            <li>Beware of the two Soldunzhers, they can end your run early. Be prepared beforehand.</li>
+        </ul>
+    </description>
+    <provides>
+        <binary>io.github.lainsce.Soldunzh</binary>
+    </provides>
+    <kudos>
+      <kudo>ModernToolkit</kudo>
+      <kudo>HiDpiIcon</kudo>
+    </kudos>
+    <developer_name translatable="no">Lains</developer_name>
+    <url type="homepage">https://github.com/lainsce/soldunzh/</url>
+    <url type="bugtracker">https://github.com/lainsce/soldunzh/issues</url>
+    <url type="donation">https://www.ko-fi.com/lainsce/</url>
+    <url type="translate">https://github.com/lainsce/soldunzh/blob/main/po/README.md</url>
+    <launchable type="desktop-id">io.github.lainsce.Soldunzh.desktop</launchable>
+    <screenshots>
+        <screenshot type="default">
+            <image>https://raw.githubusercontent.com/lainsce/soldunzh/main/data/shot.png</image>
+        </screenshot>
+    </screenshots>
+    <content_rating type="oars-1.1" />
+    <recommends>
+      <control>keyboard</control>
+      <control>pointing</control>
+      <control>touch</control>
+    </recommends>
+    <requires>
+      <display_length compare="ge">360</display_length>
+    </requires>
+    <custom>
+      <value key="GnomeSoftware::key-colors">[(0, 0, 0)]</value>
+    </custom>
+    <translation type="gettext">io.github.lainsce.Soldunzh</translation>
+    <releases>
+        <release version="3.0.0" date="2021-04-25">
+            <description>
+                <p>Release: Soldunzh Awaits</p>
+                <ul>
+                    <li>First release</li>
+                </ul>
+            </description>
+        </release>
+    </releases>
+</component>

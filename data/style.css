@@ -1,0 +1,42 @@
+@define-color accent_color #F66151;
+@define-color accent_bg_color #F66151;
+@define-color window_bg_color #eee;
+@define-color headerbar_bg_color #e8e8e8;
+
+.fab {
+  box-shadow: 0 4px 8px 4px alpha(@accent_color, 0.15);
+}
+.fab image {
+  min-width: 24px;
+  min-height: 24px;
+  -gtk-icon-size: 24px;
+}
+
+.gauge_hp trough progress {
+  background: #f00;
+}
+.gauge_sp trough progress {
+  background: #75dec2;
+}
+.gauge_xp trough progress {
+  background: #333;
+}
+
+.destructive-label {
+  color: #F00;
+}
+
+.flipped {
+  background: #eee;
+}
+.flipped * {
+  opacity: 0.35;
+}
+
+.suit {
+  font-size: 64px;
+}
+
+.soldunzh {
+  background: #eee;
+}

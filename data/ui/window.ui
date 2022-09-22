@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+	<template class="SoldunzhMainWindow" parent="AdwApplicationWindow">
+		<property name="default-width">640</property>
+		<property name="default-height">360</property>
+		<child>
+			<object class="GtkBox">
+				<property name="orientation">vertical</property>
+				<property name="vexpand">1</property>
+				<child>
+					<object class="AdwViewStack" id="stack">
+						<child>
+							<object class="AdwViewStackPage">
+								<property name="name">overview</property>
+								<property name="child">
+								  <object class="GtkWindowHandle">
+								    <child>
+									    <object class="GtkBox" id="soldunzh">
+									      <style>
+											    <class name="soldunzh"/>
+										    </style>
+										    <property name="orientation">vertical</property>
+										    <property name="vexpand">1</property>
+										    <child>
+											    <object class="AdwHeaderBar">
+												    <child type="end">
+													    <object class="GtkMenuButton" id="button_menu">
+														    <property name="menu-model">menu_app</property>
+														    <property name="icon-name">open-menu-symbolic</property>
+														    <property name="primary">true</property>
+													    </object>
+												    </child>
+												    <child type="title">
+													    <object class="GtkLabel"/>
+												    </child>
+												    <style>
+													    <class name="flat"/>
+												    </style>
+											    </object>
+										    </child>
+										    <child>
+											    <object class="AdwStatusPage">
+												    <property name="title">Soldunzh</property>
+												    <property name="description">Choose Difficulty</property>
+												    <property name="vexpand">1</property>
+												    <child>
+													    <object class="GtkBox">
+														    <property name="orientation">vertical</property>
+														    <property name="spacing">24</property>
+														    <child>
+															    <object class="GtkBox">
+																    <property name="orientation">horizontal</property>
+																    <property name="valign">center</property>
+															      <property name="halign">center</property>
+																    <property name="spacing">12</property>
+																    <child>
+																	    <object class="GtkToggleButton" id="easy_button">
+																		    <property name="label">Easy</property>
+																		    <property name="active">1</property>
+																	      <property name="width-request">100</property>
+																	    </object>
+																    </child>
+																    <child>
+																	    <object class="GtkToggleButton" id="normal_button">
+																		    <property name="label">Normal</property>
+																		    <property name="group">easy_button</property>
+																	      <property name="width-request">100</property>
+																	    </object>
+																    </child>
+																    <child>
+																	    <object class="GtkToggleButton" id="hard_button">
+																		    <property name="label">Hard</property>
+																		    <property name="group">easy_button</property>
+																	      <property name="width-request">100</property>
+																	    </object>
+																    </child>
+															    </object>
+														    </child>
+														    <child>
+															    <object class="GtkBox">
+																    <property name="orientation">horizontal</property>
+																    <property name="valign">center</property>
+																    <property name="homogeneous">1</property>
+																    <property name="spacing">12</property>
+																    <child>
+																	    <object class="GtkButton" id="start_game_button">
+																		    <property name="icon-name">go-next-symbolic</property>
+																		    <property name="halign">center</property>
+																		    <property name="height-request">64</property>
+																		    <property name="width-request">64</property>
+																		    <style>
+																			    <class name="circular"/>
+																			    <class name="suggested-action"/>
+																			    <class name="fab"/>
+																		    </style>
+																	    </object>
+																    </child>
+															    </object>
+														    </child>
+													    </object>
+												    </child>
+											    </object>
+										    </child>
+									    </object>
+								    </child>
+									</object>
+								</property>
+							</object>
+						</child>
+						<child>
+							<object class="AdwViewStackPage">
+								<property name="name">game</property>
+								<property name="child">
+									<object class="GtkBox">
+										<property name="orientation">vertical</property>
+										<property name="vexpand">1</property>
+										<child>
+											<object class="AdwHeaderBar">
+												<child type="start">
+													<object class="GtkButton" id="new_game_button">
+														<property name="icon-name">new-game-symbolic</property>
+														<property name="tooltip-text" translatable="true">Abandon the journey.</property>
+													</object>
+												</child>
+												<child type="start">
+													<object class="GtkButton" id="run_button">
+														<property name="tooltip-text" translatable="true">Run from room, keeping it for later.</property>
+													  <property name="sensitive">0</property>
+														<child>
+															<object class="AdwButtonContent">
+																<property name="icon-name">run-room-symbolic</property>
+																<property name="label" translatable="true">Run</property>
+															</object>
+														</child>
+													</object>
+												</child>
+												<child type="end">
+													<object class="GtkMenuButton" id="button_menu2">
+														<property name="menu-model">menu_app2</property>
+														<property name="icon-name">open-menu-symbolic</property>
+														<property name="primary">true</property>
+													</object>
+												</child>
+												<child type="title">
+													<object class="GtkLabel">
+														<property name="label">Soldunzh</property>
+														<style>
+															<class name="title" />
+														</style>
+													</object>
+												</child>
+											</object>
+										</child>
+										<child>
+											<object class="AdwClamp">
+												<child>
+													<object class="GtkBox">
+														<property name="orientation">vertical</property>
+														<property name="margin-start">12</property>
+														<property name="margin-end">12</property>
+														<property name="margin-top">12</property>
+														<property name="margin-bottom">12</property>
+														<property name="spacing">12</property>
+														<child>
+															<object class="GtkBox">
+																<property name="spacing">24</property>
+																<property name="homogeneous">true</property>
+																<property name="height-request">330</property>
+																<child>
+																	<object class="GtkButton" id="card1">
+																		<child>
+																			<object class="GtkBox">
+																				<property name="orientation">vertical</property>
+																				<property name="homogeneous">true</property>
+																				<property name="width-request">200</property>
+																				<child>
+																					<object class="GtkLabel" id="card1_strength">
+																						<property name="margin-top">6</property>
+																						<property name="margin-start">12</property>
+																						<property name="halign">start</property>
+																						<style>
+																							<class name="title-1"/>
+																						</style>
+																					</object>
+																				</child>
+																				<child>
+																					<object class="GtkLabel" id="card1_suit">
+																						<style>
+																							<class name="suit"/>
+																						</style>
+																					</object>
+																				</child>
+																				<child>
+																					<object class="GtkLabel" id="card1_name">
+																						<property name="halign">center</property>
+																						<style>
+																							<class name="title"/>
+																						</style>
+																					</object>
+																				</child>
+																			</object>
+																		</child>
+																		<style>
+																			<class name="card"/>
+																		</style>
+																	</object>
+																</child>
+																<child>
+																	<object class="GtkButton" id="card2">
+																		<child>
+																			<object class="GtkBox">
+																				<property name="orientation">vertical</property>
+																				<property name="homogeneous">true</property>
+																				<property name="width-request">200</property>
+																				<child>
+																					<object class="GtkLabel" id="card2_strength">
+																						<property name="margin-top">6</property>
+																						<property name="margin-start">12</property>
+																						<property name="halign">start</property>
+																						<style>
+																							<class name="title-1"/>
+																						</style>
+																					</object>
+																				</child>
+																				<child>
+																					<object class="GtkLabel" id="card2_suit">
+																						<style>
+																							<class name="suit"/>
+																						</style>
+																					</object>
+																				</child>
+																				<child>
+																					<object class="GtkLabel" id="card2_name">
+																						<property name="halign">center</property>
+																						<style>
+																							<class name="title"/>
+																						</style>
+																					</object>
+																				</child>
+																			</object>
+																		</child>
+																		<style>
+																			<class name="card"/>
+																		</style>
+																	</object>
+																</child>
+																<child>
+																	<object class="GtkButton" id="card3">
+																		<child>
+																			<object class="GtkBox">
+																				<property name="orientation">vertical</property>
+																				<property name="homogeneous">true</property>
+																				<property name="width-request">200</property>
+																				<child>
+																					<object class="GtkLabel" id="card3_strength">
+																						<property name="margin-top">6</property>
+																						<property name="margin-start">12</property>
+																						<property name="halign">start</property>
+																						<style>
+																							<class name="title-1"/>
+																						</style>
+																					</object>
+																				</child>
+																				<child>
+																					<object class="GtkLabel" id="card3_suit">
+																						<style>
+																							<class name="suit"/>
+																						</style>
+																					</object>
+																				</child>
+																				<child>
+																					<object class="GtkLabel" id="card3_name">
+																						<property name="halign">center</property>
+																						<style>
+																							<class name="title"/>
+																						</style>
+																					</object>
+																				</child>
+																			</object>
+																		</child>
+																		<style>
+																			<class name="card"/>
+																		</style>
+																	</object>
+																</child>
+																<child>
+																	<object class="GtkButton"  id="card4">
+																		<child>
+																			<object class="GtkBox">
+																				<property name="orientation">vertical</property>
+																				<property name="homogeneous">true</property>
+																				<property name="width-request">200</property>
+																				<child>
+																					<object class="GtkLabel" id="card4_strength">
+																						<property name="margin-top">6</property>
+																						<property name="margin-start">12</property>
+																						<property name="halign">start</property>
+																						<style>
+																							<class name="title-1"/>
+																						</style>
+																					</object>
+																				</child>
+																				<child>
+																					<object class="GtkLabel" id="card4_suit">
+																						<style>
+																							<class name="suit"/>
+																						</style>
+																					</object>
+																				</child>
+																				<child>
+																					<object class="GtkLabel" id="card4_name">
+																						<property name="halign">center</property>
+																						<style>
+																							<class name="title"/>
+																						</style>
+																					</object>
+																				</child>
+																			</object>
+																		</child>
+																		<style>
+																			<class name="card"/>
+																		</style>
+																	</object>
+																</child>
+															</object>
+														</child>
+														<child>
+															<object class="GtkBox">
+																<property name="vexpand">true</property>
+																<property name="spacing">12</property>
+																<property name="homogeneous">true</property>
+																<property name="valign">start</property>
+																<child>
+																	<object class="GtkBox">
+																		<property name="orientation">vertical</property>
+																		<property name="spacing">6</property>
+																		<property name="valign">center</property>
+																		<child>
+																			<object class="GtkProgressBar" id="gauge_hp">
+																				<property name="valign">center</property>
+																				<property name="text" translatable="true">HP</property>
+																				<property name="show-text">true</property>
+																				<style>
+																					<class name="gauge_hp" />
+																				</style>
+																			</object>
+																		</child>
+																		<child>
+																			<object class="GtkProgressBar" id="gauge_sp">
+																				<property name="valign">center</property>
+																				<property name="text" translatable="true">SP</property>
+																				<property name="show-text">true</property>
+																				<style>
+																					<class name="gauge_sp" />
+																				</style>
+																			</object>
+																		</child>
+																		<child>
+																			<object class="GtkProgressBar" id="gauge_xp">
+																				<property name="valign">center</property>
+																				<property name="text" translatable="true">XP</property>
+																				<property name="show-text">true</property>
+																				<style>
+																					<class name="gauge_xp" />
+																				</style>
+																			</object>
+																		</child>
+																	</object>
+																</child>
+																<child>
+																	<object class="GtkBox">
+																		<property name="margin-start">6</property>
+																		<property name="margin-top">6</property>
+																		<property name="orientation">vertical</property>
+																		<child>
+																			<object class="GtkLabel" id="timeline">
+																				<property name="margin-start">12</property>
+																				<property name="margin-top">12</property>
+																				<property name="halign">start</property>
+																			</object>
+																		</child>
+																		<style>
+																			<class name="card"/>
+																		</style>
+																	</object>
+																</child>
+															</object>
+														</child>
+													</object>
+												</child>
+											</object>
+										</child>
+									</object>
+								</property>
+							</object>
+						</child>
+					</object>
+				</child>
+			</object>
+		</child>
+	</template>
+	<menu id="menu_app">
+		<section>
+			<item>
+				<attribute name="label" translatable="true">Keyboard Shortcuts</attribute>
+				<attribute name="action">app.keys</attribute>
+			</item>
+			<item>
+				<attribute name="label" translatable="true">About Soldunzh</attribute>
+				<attribute name="action">app.about</attribute>
+			</item>
+		</section>
+	</menu>
+	<menu id="menu_app2">
+		<section>
+			<item>
+				<attribute name="label" translatable="true">Keyboard Shortcuts</attribute>
+				<attribute name="action">app.keys</attribute>
+			</item>
+			<item>
+				<attribute name="label" translatable="true">About Soldunzh</attribute>
+				<attribute name="action">app.about</attribute>
+			</item>
+		</section>
+	</menu>
+</interface>
