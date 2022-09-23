@@ -3,6 +3,7 @@
 	<template class="SoldunzhMainWindow" parent="AdwApplicationWindow">
 		<property name="default-width">640</property>
 		<property name="default-height">360</property>
+	  <property name="resizable">0</property>
 		<child>
 			<object class="GtkBox">
 				<property name="orientation">vertical</property>
@@ -57,21 +58,30 @@
 																	    <object class="GtkToggleButton" id="easy_button">
 																		    <property name="label">Easy</property>
 																		    <property name="active">1</property>
-																	      <property name="width-request">100</property>
+																	      <property name="width-request">120</property>
+																	      <style>
+													                <class name="opaque-toggle"/>
+												                </style>
 																	    </object>
 																    </child>
 																    <child>
 																	    <object class="GtkToggleButton" id="normal_button">
 																		    <property name="label">Normal</property>
 																		    <property name="group">easy_button</property>
-																	      <property name="width-request">100</property>
+																	      <property name="width-request">120</property>
+																	      <style>
+													                <class name="opaque-toggle"/>
+												                </style>
 																	    </object>
 																    </child>
 																    <child>
 																	    <object class="GtkToggleButton" id="hard_button">
 																		    <property name="label">Hard</property>
 																		    <property name="group">easy_button</property>
-																	      <property name="width-request">100</property>
+																	      <property name="width-request">120</property>
+																	      <style>
+													                <class name="opaque-toggle"/>
+												                </style>
 																	    </object>
 																    </child>
 															    </object>
@@ -142,7 +152,7 @@
 													</object>
 												</child>
 												<child type="title">
-													<object class="GtkLabel">
+													<object class="GtkLabel" id="room_title">
 														<property name="label">Soldunzh</property>
 														<style>
 															<class name="title" />
@@ -392,7 +402,6 @@
 																			</object>
 																		</child>
 																		<style>
-																			<class name="card"/>
 																		  <class name="timeline"/>
 																		</style>
 																	</object>

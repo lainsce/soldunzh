@@ -55,8 +55,8 @@ namespace Soldunzh {
             new Card("V", 0.11, CardType.SPADE, (_("Consort")), "monster"),
             new Card("Q", 0.13, CardType.SPADE, (_("Queen")), "monster"),
             new Card("K", 0.15, CardType.SPADE, (_("Regent")), "monster"),
-            new Card("J", 0.21, CardType.JOKER, (_("Soldunzher")), "monster"),
-            new Card("J", 0.21, CardType.JOKER, (_("Soldunzher")), "monster")
+            new Card("J", 0.21, CardType.JOKER, (_("First Soldunzher")), "monster"),
+            new Card("J", 0.21, CardType.JOKER, (_("Second Soldunzher")), "monster")
         };
 
         public Gee.ArrayList<Card> draw_pile;

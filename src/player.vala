@@ -27,13 +27,15 @@ namespace Soldunzh {
 
         public void update (MainWindow mw, double health, double shield, double exp) {
             if (this.health.val < 0.01) {
+                mw.card1.add_css_class ("flipped");
+                mw.card2.add_css_class ("flipped");
+                mw.card3.add_css_class ("flipped");
+                mw.card4.add_css_class ("flipped");
                 var dialog = new Adw.MessageDialog (mw, _("Game Over"), null);
 		        dialog.set_body (_("The player is lost in the mists of Soldunzh."));
-		        dialog.add_response ("cancel", _("Cancel"));
 		        dialog.add_response ("clear",  _("Try Again"));
 		        dialog.set_response_appearance ("clear", Adw.ResponseAppearance.DESTRUCTIVE);
 		        dialog.set_default_response ("clear");
-		        dialog.set_close_response ("cancel");
 		        dialog.response.connect ((response) => {
 		            switch (response) {
 		                case "clear":
@@ -41,7 +43,6 @@ namespace Soldunzh {
 		                    dialog.close ();
 		                    this.health.val = 0.21;
 		                    break;
-		                case "cancel":
 		                default:
 		                    dialog.close ();
 		                    return;

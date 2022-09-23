@@ -5,6 +5,7 @@
     <file preprocess="xml-stripblanks" alias="keys.ui">ui/keys.ui</file>
     <file alias="style.css">style.css</file>
     <file alias="style-dark.css">style-dark.css</file>
+    <file alias="bg.svg">assets/bg.svg</file>
   </gresource>
   <gresource prefix="/io/github/lainsce/Soldunzh/icons">
       <file alias="scalable/actions/new-game-symbolic.svg">icons/new-game-symbolic.svg</file>

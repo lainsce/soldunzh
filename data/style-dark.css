@@ -1,29 +1,24 @@
-@define-color accent_color #F66151;
-@define-color accent_bg_color #F66151;
-@define-color window_bg_color #101010;
-@define-color headerbar_bg_color #181818;
+@define-color accent_color #ab3232;
+@define-color accent_bg_color #ab3232;
+@define-color window_bg_color #000;
+@define-color headerbar_bg_color #111;
 
 .gauge_xp trough progress {
   background: #eee;
 }
 
-.flipped {
-  background: #222;
-}
-
 .soldunzh {
-  background: #101010;
+  background-color: #000;
+  background-image: url(resource://io/github/lainsce/Soldunzh/bg.svg);
+  background-position: 0% 0%;
+  background-repeat: repeat;
 }
 
-.card {
-  background: #eaeaea;
-  color: #101010;
-  opacity: 0.8;
+.card.flipped {
+  background: #333;
 }
 
 .timeline {
-  background: #000;
+  background: #111;
   color: #fff;
-  box-shadow: 0 0 2px 0 #AAA;
-  font-family: monospace;
 }
