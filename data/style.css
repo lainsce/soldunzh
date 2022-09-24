@@ -1,14 +1,10 @@
-@define-color accent_color #ff2851;
-@define-color accent_bg_color #ff2851;
-@define-color window_bg_color #fafafa;
-@define-color headerbar_bg_color #fafafa;
-
-window * {
-  font-family: "Cantarell", sans-serif;
-}
+@define-color accent_color #fe2d53;
+@define-color accent_bg_color #fe2d53;
+@define-color window_bg_color #fff;
+@define-color headerbar_bg_color #fff;
 
 .fab {
-  box-shadow: 0 4px 8px 4px alpha(@accent_color, 0.15);
+  color: #000;
 }
 .fab image {
   min-width: 24px;
@@ -17,7 +13,7 @@ window * {
 }
 
 .gauge_hp trough progress {
-  background: #ff2851;
+  background: #fe2d53;
 }
 .gauge_sp trough progress {
   background: #75dec2;
@@ -27,15 +23,15 @@ window * {
 }
 
 .red-label {
-  color: #ff2851;
+  color: #fe2d53;
 }
 .black-label {
-  color: #27262b;
+  color: #111;
 }
 
 .card.flipped {
-  background: #363636;
-  box-shadow: 0 0 3px #363636;
+  background: #333;
+  box-shadow: 0 0 0 3px #333;
 }
 .flipped * {
   opacity: 0.2;
@@ -53,9 +49,9 @@ window * {
 }
 
 .soldunzh {
-  background-color: #fafafa;
-  background-image: url(resource://io/github/lainsce/Soldunzh/bg.svg);
-  background-position: 0% 0%;
+  background-color: #fff;
+  background-image: url(resource://io/github/lainsce/Soldunzh/bg-light.svg);
+  background-position: 50% 50%;
   background-repeat: repeat;
 }
 
@@ -63,13 +59,18 @@ window * {
   background: #fff;
   color: #000;
   border-radius: 16px;
-  box-shadow: 0 4px 2px 0 #363636;
+  box-shadow: 0 4px 0 2px #fafafa;
+}
+
+.card:hover {
+  box-shadow: 0 -4px 0 2px #fafafa;
 }
 
 .timeline {
   background: #fff;
   color: #000;
   border-radius: 8px;
-  box-shadow: 0 0 0 2px @borders;
+  box-shadow: 0 0 0 3px @borders;
   font-family: monospace;
+  padding: 8px;
 }

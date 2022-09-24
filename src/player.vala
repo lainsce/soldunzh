@@ -65,7 +65,6 @@ namespace Soldunzh {
         public void attack (Card card) {
             var attack_value = card.val;
             var damages = attack_value;
-            string shield_event = "";
 
             // Shield
             if (this.shield.val > 0.0) {
@@ -73,14 +72,14 @@ namespace Soldunzh {
               if (this.shield.is_damaged () == true && attack_value >= this.shield.break_limit) {
                 this.shield.val = 0.0;
                 this.shield.break_limit = 0.0;
-                shield_event = (_("Your shield broke."));
-                mw.timeline.set_text (shield_event);
+                mw.msg = (_("Your shield broke."));
+                mw.timeline.set_text (mw.msg);
                 this.shield.update(this.shield.val);
               } else {
                 this.shield.break_limit = attack_value;
                 damages = attack_value > this.shield.val ? (int)Math.fabs(attack_value - this.shield.val) : 0;
-                shield_event = (_("Your shield absorbed the blow."));
-                mw.timeline.set_text (shield_event);
+                mw.msg = (_("Your shield absorbed the blow."));
+                mw.timeline.set_text (mw.msg);
                 this.shield.update(this.shield.val);
               }
             }
@@ -107,6 +106,8 @@ namespace Soldunzh {
 
             this.can_drink = true;
             mw.is_complete = false;
+		    this.health.update(this.health.val);
+            this.shield.update(this.shield.val);
         }
 
         public void equip_shield (double shield_value) {
@@ -116,9 +117,10 @@ namespace Soldunzh {
             mw.msg = (_("Equipped shield."));
 		    mw.timeline.set_text (mw.msg);
 
-            this.shield.val = shield_value ;
+            this.shield.val = shield_value;
             this.can_drink = true;
             mw.is_complete = false;
+            this.health.update(this.health.val);
             this.shield.update(this.shield.val);
         }
 
@@ -136,6 +138,7 @@ namespace Soldunzh {
             mw.msg = (_("Drank potion."));
 		    mw.timeline.set_text (mw.msg);
             this.health.update(this.health.val);
+		    this.shield.update(this.shield.val);
         }
 
         public void escape_room () {

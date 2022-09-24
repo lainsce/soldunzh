@@ -396,8 +396,6 @@
 																		<property name="orientation">vertical</property>
 																		<child>
 																			<object class="GtkLabel" id="timeline">
-																				<property name="margin-start">12</property>
-																				<property name="margin-top">12</property>
 																				<property name="halign">start</property>
 																			</object>
 																		</child>

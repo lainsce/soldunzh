@@ -110,7 +110,7 @@ namespace Soldunzh {
 		            deck.start ();
 		            board.enter_room (true);
 		            deck.shuffle ();
-		            msg = "You enter the Soldunzh.";
+		            msg = "You enter the Soldunzh lands\nat Easy difficulty.";
 		            timeline.set_text (msg);
 
 		            run_button.clicked.connect (() => {
@@ -197,7 +197,7 @@ namespace Soldunzh {
 		            deck.start ();
 		            board.enter_room (true);
 		            deck.shuffle ();
-		            msg = "You enter the Soldunzh.";
+		            msg = "You enter the Soldunzh lands\nat Medium difficulty.";
 		            timeline.set_text (msg);
 
 		            run_button.clicked.connect (() => {
@@ -284,7 +284,7 @@ namespace Soldunzh {
 		            deck.start ();
 		            board.enter_room (true);
 		            deck.shuffle ();
-		            msg = "You enter the Soldunzh.";
+		            msg = "You enter the Soldunzh lands\nat Hard difficulty.";
 		            timeline.set_text (msg);
 
 		            run_button.clicked.connect (() => {
@@ -372,7 +372,7 @@ namespace Soldunzh {
 		            deck.start ();
 		            board.enter_room (true);
 		            deck.shuffle ();
-		            msg = "You enter the Soldunzh.";
+		            msg = "You enter the Soldunzh?";
 		            timeline.set_text (msg);
 
 		            run_button.clicked.connect (() => {
