@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <template class="SoldunzhCard" parent="GtkButton">
+	  <child>
+		  <object class="GtkBox">
+			  <property name="orientation">vertical</property>
+			  <property name="homogeneous">true</property>
+			  <property name="width-request">200</property>
+			  <child>
+				  <object class="GtkLabel" id="card_strength">
+					  <property name="margin-top">15</property>
+					  <property name="margin-start">15</property>
+					  <property name="halign">start</property>
+				    <property name="valign">start</property>
+					  <style>
+						  <class name="title-1"/>
+					  </style>
+				  </object>
+			  </child>
+			  <child>
+				  <object class="GtkLabel" id="card_suit">
+					  <style>
+						  <class name="suit"/>
+					  </style>
+				  </object>
+			  </child>
+			  <child>
+				  <object class="GtkLabel" id="card_name">
+					  <property name="halign">center</property>
+				    <property name="valign">end</property>
+				    <property name="margin-bottom">15</property>
+					  <style>
+						  <class name="title"/>
+					  </style>
+				  </object>
+			  </child>
+		  </object>
+	  </child>
+	  <style>
+		  <class name="card"/>
+	  </style>
+  </template>
+</interface>

@@ -26,11 +26,11 @@ namespace Soldunzh {
         }
 
         public void update (MainWindow mw, double health, double shield, double exp) {
-            if (this.health.val < 0.01) {
-                mw.card1.add_css_class ("flipped");
-                mw.card2.add_css_class ("flipped");
-                mw.card3.add_css_class ("flipped");
-                mw.card4.add_css_class ("flipped");
+            if (this.health.val < 0.001) {
+                mw.board.room[0].add_css_class ("flipped");
+                mw.board.room[1].add_css_class ("flipped");
+                mw.board.room[2].add_css_class ("flipped");
+                mw.board.room[3].add_css_class ("flipped");
                 var dialog = new Adw.MessageDialog (mw, _("Game Over"), null);
 		        dialog.set_body (_("The player is lost in the mists of Soldunzh."));
 		        dialog.add_response ("clear",  _("Try Again"));
@@ -40,6 +40,7 @@ namespace Soldunzh {
 		            switch (response) {
 		                case "clear":
 		                    mw.stack.set_visible_child_name ("overview");
+		                    mw.board.remove_cards ();
 		                    dialog.close ();
 		                    this.health.val = 0.21;
 		                    break;
@@ -156,10 +157,10 @@ namespace Soldunzh {
             mw.board.enter_room(false);
             mw.msg = (_("Escaped the room!"));
 		    mw.timeline.set_text (mw.msg);
-            mw.card1.remove_css_class ("flipped");
-            mw.card2.remove_css_class ("flipped");
-            mw.card3.remove_css_class ("flipped");
-            mw.card4.remove_css_class ("flipped");
+            mw.board.room[0].remove_css_class ("flipped");
+            mw.board.room[1].remove_css_class ("flipped");
+            mw.board.room[2].remove_css_class ("flipped");
+            mw.board.room[3].remove_css_class ("flipped");
         }
 
         public bool can_escape (MainWindow mw) {

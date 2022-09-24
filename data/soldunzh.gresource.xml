@@ -3,6 +3,7 @@
   <gresource prefix="/io/github/lainsce/Soldunzh">
     <file preprocess="xml-stripblanks" alias="window.ui">ui/window.ui</file>
     <file preprocess="xml-stripblanks" alias="keys.ui">ui/keys.ui</file>
+    <file preprocess="xml-stripblanks" alias="card.ui">ui/card.ui</file>
     <file alias="style.css">style.css</file>
     <file alias="style-dark.css">style-dark.css</file>
     <file alias="bg.svg">assets/bg.svg</file>

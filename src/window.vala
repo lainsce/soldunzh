@@ -42,40 +42,8 @@ namespace Soldunzh {
         public unowned Gtk.ProgressBar gauge_sp;
         [GtkChild]
         public unowned Gtk.ProgressBar gauge_xp;
-
-        // Cards
         [GtkChild]
-        public unowned Gtk.Button card1;
-        [GtkChild]
-        public unowned Gtk.Label card1_strength;
-        [GtkChild]
-        public unowned Gtk.Label card1_suit;
-        [GtkChild]
-        public unowned Gtk.Label card1_name;
-        [GtkChild]
-        public unowned Gtk.Button card2;
-        [GtkChild]
-        public unowned Gtk.Label card2_strength;
-        [GtkChild]
-        public unowned Gtk.Label card2_suit;
-        [GtkChild]
-        public unowned Gtk.Label card2_name;
-        [GtkChild]
-        public unowned Gtk.Button card3;
-        [GtkChild]
-        public unowned Gtk.Label card3_strength;
-        [GtkChild]
-        public unowned Gtk.Label card3_suit;
-        [GtkChild]
-        public unowned Gtk.Label card3_name;
-        [GtkChild]
-        public unowned Gtk.Button card4;
-        [GtkChild]
-        public unowned Gtk.Label card4_strength;
-        [GtkChild]
-        public unowned Gtk.Label card4_suit;
-        [GtkChild]
-        public unowned Gtk.Label card4_name;
+        public unowned Gtk.Box card_holder;
 
         public Player player = null;
         public Board board = null;
@@ -84,12 +52,14 @@ namespace Soldunzh {
         public int difficulty = 0;
         public string msg = "";
         public bool is_complete;
+        public MainWindow? mw {get; set;}
 
         public MainWindow (Gtk.Application app) {
             Object (application: app);
 
             var adwsm = Adw.StyleManager.get_default ();
             adwsm.set_color_scheme (Adw.ColorScheme.PREFER_DARK);
+            this.mw = (MainWindow) app.get_active_window ();
         }
 
         construct {
@@ -116,71 +86,6 @@ namespace Soldunzh {
 		            run_button.clicked.connect (() => {
                         player.escape_room ();
                     });
-
-		            card1.clicked.connect (() => {
-                        //
-                        var card1c = board.room[0];
-		                card1c.touch (this);
-		                if (card1c.is_flipped) {
-                          card1.add_css_class ("flipped");
-                        } else {
-                          card1.remove_css_class ("flipped");
-                        }
-                        gauge_hp.fraction = player.health.val;
-		                gauge_sp.fraction = player.shield.val;
-		                gauge_xp.fraction = player.exp.val;
-		                gauge_hp.text = "%0.0f HP".printf(player.health.val * 100);
-		                gauge_sp.text = "%0.0f / %0.0f SP".printf(player.shield.val * 100, player.shield.break_limit * 100);
-		                gauge_xp.text = "%0.0f XP".printf(player.exp.val * 100);
-                    });
-		            card2.clicked.connect (() => {
-                        //
-                        var card2c = board.room[1];
-		                card2c.touch (this);
-		                if (card2c.is_flipped) {
-                          card2.add_css_class ("flipped");
-                        } else {
-                          card2.remove_css_class ("flipped");
-                        }
-                        gauge_hp.fraction = player.health.val;
-		                gauge_sp.fraction = player.shield.val;
-		                gauge_xp.fraction = player.exp.val;
-		                gauge_hp.text = "%0.0f HP".printf(player.health.val * 100);
-		                gauge_sp.text = "%0.0f / %0.0f SP".printf(player.shield.val * 100, player.shield.break_limit * 100);
-		                gauge_xp.text = "%0.0f XP".printf(player.exp.val * 100);
-                    });
-		            card3.clicked.connect (() => {
-                        //
-                        var card3c = board.room[2];
-		                card3c.touch (this);
-		                if (card3c.is_flipped) {
-                          card3.add_css_class ("flipped");
-                        } else {
-                          card3.remove_css_class ("flipped");
-                        }
-                        gauge_hp.fraction = player.health.val;
-		                gauge_sp.fraction = player.shield.val;
-		                gauge_xp.fraction = player.exp.val;
-		                gauge_hp.text = "%0.0f HP".printf(player.health.val * 100);
-		                gauge_sp.text = "%0.0f / %0.0f SP".printf(player.shield.val * 100, player.shield.break_limit * 100);
-		                gauge_xp.text = "%0.0f XP".printf(player.exp.val * 100);
-                    });
-		            card4.clicked.connect (() => {
-                        //
-                        var card4c = board.room[3];
-		                card4c.touch (this);
-		                if (card4c.is_flipped) {
-                          card4.add_css_class ("flipped");
-                        } else {
-                          card4.remove_css_class ("flipped");
-                        }
-                        gauge_hp.fraction = player.health.val;
-		                gauge_sp.fraction = player.shield.val;
-		                gauge_xp.fraction = player.exp.val;
-		                gauge_hp.text = "%0.0f HP".printf(player.health.val * 100);
-		                gauge_sp.text = "%0.0f / %0.0f SP".printf(player.shield.val * 100, player.shield.break_limit * 100);
-		                gauge_xp.text = "%0.0f XP".printf(player.exp.val * 100);
-                    });
 		        } else if (normal_button.active) {
 		            stack.set_visible_child_name ("game");
                     difficulty = 1;
@@ -202,71 +107,6 @@ namespace Soldunzh {
 
 		            run_button.clicked.connect (() => {
                         player.escape_room ();
-                    });
-
-		            card1.clicked.connect (() => {
-                        //
-                        var card1c = board.room[0];
-		                card1c.touch (this);
-		                if (card1c.is_flipped) {
-                          card1.add_css_class ("flipped");
-                        } else {
-                          card1.add_css_class ("flipped");
-                        }
-                        gauge_hp.fraction = player.health.val;
-		                gauge_sp.fraction = player.shield.val;
-		                gauge_xp.fraction = player.exp.val;
-		                gauge_hp.text = "%0.0f HP".printf(player.health.val * 100);
-		                gauge_sp.text = "%0.0f / %0.0f SP".printf(player.shield.val * 100, player.shield.break_limit * 100);
-		                gauge_xp.text = "%0.0f XP".printf(player.exp.val * 100);
-                    });
-		            card2.clicked.connect (() => {
-                        //
-                        var card2c = board.room[1];
-		                card2c.touch (this);
-		                if (card2c.is_flipped) {
-                          card2.add_css_class ("flipped");
-                        } else {
-                          card2.add_css_class ("flipped");
-                        }
-                        gauge_hp.fraction = player.health.val;
-		                gauge_sp.fraction = player.shield.val;
-		                gauge_xp.fraction = player.exp.val;
-		                gauge_hp.text = "%0.0f HP".printf(player.health.val * 100);
-		                gauge_sp.text = "%0.0f / %0.0f SP".printf(player.shield.val * 100, player.shield.break_limit * 100);
-		                gauge_xp.text = "%0.0f XP".printf(player.exp.val * 100);
-                    });
-		            card3.clicked.connect (() => {
-                        //
-                        var card3c = board.room[2];
-		                card3c.touch (this);
-		                if (card3c.is_flipped) {
-                          card3.add_css_class ("flipped");
-                        } else {
-                          card3.add_css_class ("flipped");
-                        }
-                        gauge_hp.fraction = player.health.val;
-		                gauge_sp.fraction = player.shield.val;
-		                gauge_xp.fraction = player.exp.val;
-		                gauge_hp.text = "%0.0f HP".printf(player.health.val * 100);
-		                gauge_sp.text = "%0.0f / %0.0f SP".printf(player.shield.val * 100, player.shield.break_limit * 100);
-		                gauge_xp.text = "%0.0f XP".printf(player.exp.val * 100);
-                    });
-		            card4.clicked.connect (() => {
-                        //
-                        var card4c = board.room[3];
-		                card4c.touch (this);
-		                if (card4c.is_flipped) {
-                          card4.add_css_class ("flipped");
-                        } else {
-                          card4.add_css_class ("flipped");
-                        }
-                        gauge_hp.fraction = player.health.val;
-		                gauge_sp.fraction = player.shield.val;
-		                gauge_xp.fraction = player.exp.val;
-		                gauge_hp.text = "%0.0f HP".printf(player.health.val * 100);
-		                gauge_sp.text = "%0.0f / %0.0f SP".printf(player.shield.val * 100, player.shield.break_limit * 100);
-		                gauge_xp.text = "%0.0f XP".printf(player.exp.val * 100);
                     });
 		        } else if (hard_button.active) {
 		            stack.set_visible_child_name ("game");
@@ -290,159 +130,6 @@ namespace Soldunzh {
 		            run_button.clicked.connect (() => {
                         player.escape_room ();
                     });
-
-		            card1.clicked.connect (() => {
-                        //
-                        var card1c = board.room[0];
-		                card1c.touch (this);
-		                if (card1c.is_flipped) {
-                          card1.add_css_class ("flipped");
-                        } else {
-                          card1.add_css_class ("flipped");
-                        }
-                        gauge_hp.fraction = player.health.val;
-		                gauge_sp.fraction = player.shield.val;
-		                gauge_xp.fraction = player.exp.val;
-		                gauge_hp.text = "%0.0f HP".printf(player.health.val * 100);
-		                gauge_sp.text = "%0.0f / %0.0f SP".printf(player.shield.val * 100, player.shield.break_limit * 100);
-		                gauge_xp.text = "%0.0f XP".printf(player.exp.val * 100);
-                    });
-		            card2.clicked.connect (() => {
-                        //
-                        var card2c = board.room[1];
-		                card2c.touch (this);
-		                if (card2c.is_flipped) {
-                          card2.add_css_class ("flipped");
-                        } else {
-                          card2.add_css_class ("flipped");
-                        }
-                        gauge_hp.fraction = player.health.val;
-		                gauge_sp.fraction = player.shield.val;
-		                gauge_xp.fraction = player.exp.val;
-		                gauge_hp.text = "%0.0f HP".printf(player.health.val * 100);
-		                gauge_sp.text = "%0.0f / %0.0f SP".printf(player.shield.val * 100, player.shield.break_limit * 100);
-		                gauge_xp.text = "%0.0f XP".printf(player.exp.val * 100);
-                    });
-		            card3.clicked.connect (() => {
-                        //
-                        var card3c = board.room[2];
-		                card3c.touch (this);
-		                if (card3c.is_flipped) {
-                          card3.add_css_class ("flipped");
-                        } else {
-                          card3.add_css_class ("flipped");
-                        }
-                        gauge_hp.fraction = player.health.val;
-		                gauge_sp.fraction = player.shield.val;
-		                gauge_xp.fraction = player.exp.val;
-		                gauge_hp.text = "%0.0f HP".printf(player.health.val * 100);
-		                gauge_sp.text = "%0.0f / %0.0f SP".printf(player.shield.val * 100, player.shield.break_limit * 100);
-		                gauge_xp.text = "%0.0f XP".printf(player.exp.val * 100);
-                    });
-		            card4.clicked.connect (() => {
-                        //
-                        var card4c = board.room[3];
-		                card4c.touch (this);
-		                if (card4c.is_flipped) {
-                          card4.add_css_class ("flipped");
-                        } else {
-                          card4.add_css_class ("flipped");
-                        }
-                        gauge_hp.fraction = player.health.val;
-		                gauge_sp.fraction = player.shield.val;
-		                gauge_xp.fraction = player.exp.val;
-		                gauge_hp.text = "%0.0f HP".printf(player.health.val * 100);
-		                gauge_sp.text = "%0.0f / %0.0f SP".printf(player.shield.val * 100, player.shield.break_limit * 100);
-		                gauge_xp.text = "%0.0f XP".printf(player.exp.val * 100);
-                    });
-		        } else {
-		            // UB: set as easy then.
-		            stack.set_visible_child_name ("game");
-                    difficulty = 0;
-		            player = new Player (this);
-		            player.install ();
-		            gauge_hp.fraction = player.health.val;
-		            gauge_sp.fraction = player.shield.val;
-		            gauge_xp.fraction = player.exp.val;
-		            gauge_hp.text = "%0.0f HP".printf(player.health.val * 100);
-		            gauge_sp.text = "%0.0f / %0.0f SP".printf(player.shield.val * 100, player.shield.break_limit * 100);
-		            gauge_xp.text = "%0.0f XP".printf(player.exp.val * 100);
-		            deck = new Deck ();
-		            board = new Board (this);
-		            deck.start ();
-		            board.enter_room (true);
-		            deck.shuffle ();
-		            msg = "You enter the Soldunzh?";
-		            timeline.set_text (msg);
-
-		            run_button.clicked.connect (() => {
-                        player.escape_room ();
-                    });
-
-		            card1.clicked.connect (() => {
-                        //
-                        var card1c = board.room[0];
-		                card1c.touch (this);
-		                if (card1c.is_flipped) {
-                          card1.add_css_class ("flipped");
-                        } else {
-                          card1.add_css_class ("flipped");
-                        }
-                        gauge_hp.fraction = player.health.val;
-		                gauge_sp.fraction = player.shield.val;
-		                gauge_xp.fraction = player.exp.val;
-		                gauge_hp.text = "%0.0f HP".printf(player.health.val * 100);
-		                gauge_sp.text = "%0.0f / %0.0f SP".printf(player.shield.val * 100, player.shield.break_limit * 100);
-		                gauge_xp.text = "%0.0f XP".printf(player.exp.val * 100);
-                    });
-		            card2.clicked.connect (() => {
-                        //
-                        var card2c = board.room[1];
-		                card2c.touch (this);
-		                if (card2c.is_flipped) {
-                          card2.add_css_class ("flipped");
-                        } else {
-                          card2.add_css_class ("flipped");
-                        }
-                        gauge_hp.fraction = player.health.val;
-		                gauge_sp.fraction = player.shield.val;
-		                gauge_xp.fraction = player.exp.val;
-		                gauge_hp.text = "%0.0f HP".printf(player.health.val * 100);
-		                gauge_sp.text = "%0.0f / %0.0f SP".printf(player.shield.val * 100, player.shield.break_limit * 100);
-		                gauge_xp.text = "%0.0f XP".printf(player.exp.val * 100);
-                    });
-		            card3.clicked.connect (() => {
-                        //
-                        var card3c = board.room[2];
-		                card3c.touch (this);
-		                if (card3c.is_flipped) {
-                          card3.add_css_class ("flipped");
-                        } else {
-                          card3.add_css_class ("flipped");
-                        }
-                        gauge_hp.fraction = player.health.val;
-		                gauge_sp.fraction = player.shield.val;
-		                gauge_xp.fraction = player.exp.val;
-		                gauge_hp.text = "%0.0f HP".printf(player.health.val * 100);
-		                gauge_sp.text = "%0.0f / %0.0f SP".printf(player.shield.val * 100, player.shield.break_limit * 100);
-		                gauge_xp.text = "%0.0f XP".printf(player.exp.val * 100);
-                    });
-		            card4.clicked.connect (() => {
-                        //
-                        var card4c = board.room[3];
-		                card4c.touch (this);
-		                if (card4c.is_flipped) {
-                          card4.add_css_class ("flipped");
-                        } else {
-                          card4.add_css_class ("flipped");
-                        }
-                        gauge_hp.fraction = player.health.val;
-		                gauge_sp.fraction = player.shield.val;
-		                gauge_xp.fraction = player.exp.val;
-		                gauge_hp.text = "%0.0f HP".printf(player.health.val * 100);
-		                gauge_sp.text = "%0.0f / %0.0f SP".printf(player.shield.val * 100, player.shield.break_limit * 100);
-		                gauge_xp.text = "%0.0f XP".printf(player.exp.val * 100);
-                    });
 		        }
             });
 	        new_game_button.clicked.connect (() => {
@@ -457,6 +144,8 @@ namespace Soldunzh {
 		            switch (response) {
 		                case "clear":
 		                    stack.set_visible_child_name ("overview");
+		                    mw.board.remove_cards ();
+		                    mw.player.health.val = 0.21;
 		                    dialog.close ();
 		                    break;
 		                case "cancel":

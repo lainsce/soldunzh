@@ -11,21 +11,15 @@ namespace Soldunzh {
 
             if (mw.deck.cards.length > 0) {
               add_card (0, mw.deck.draw_card(starting_hand ? DIAMOND : ""));
-            }
-            if (mw.deck.cards.length > 0) {
               add_card (1, mw.deck.draw_card(starting_hand ? CLOVE : ""));
-            }
-            if (mw.deck.cards.length > 0) {
-              add_card (2, mw.deck.draw_card(starting_hand ? SPADE : ""));
-            }
-            if (mw.deck.cards.length > 0) {
-              add_card (3, mw.deck.draw_card(starting_hand ? HEART : ""));
+              add_card (2, mw.deck.draw_card(starting_hand ? HEART : ""));
+              add_card (3, mw.deck.draw_card(starting_hand ? SPADE : ""));
             }
 
-            mw.card1.remove_css_class ("flipped");
-            mw.card2.remove_css_class ("flipped");
-            mw.card3.remove_css_class ("flipped");
-            mw.card4.remove_css_class ("flipped");
+            this.room[0].remove_css_class ("flipped");
+            this.room[1].remove_css_class ("flipped");
+            this.room[2].remove_css_class ("flipped");
+            this.room[3].remove_css_class ("flipped");
 
             mw.player.update(mw, mw.player.health.val, mw.player.shield.val, mw.player.exp.val);
             this.update();
@@ -33,9 +27,18 @@ namespace Soldunzh {
 
         public void add_card (int index, Card card) {
             this.room.insert(index, card);
+            if (card != null)
+                mw.card_holder.append (card);
         }
 
         public void remove_cards () {
+            if (this.room.size > 0) {
+                Gtk.Widget childs = mw.card_holder.get_first_child();
+                while (childs != null) {
+                    mw.card_holder.remove(childs);
+                    childs = mw.card_holder.get_first_child();
+                }
+            }
             this.room = new Gee.ArrayList<Card>();
         }
 
@@ -47,7 +50,7 @@ namespace Soldunzh {
         }
 
         public void update () {
-            if (mw.player.health.val < 0.01) {
+            if (mw.player.health.val < 0.001) {
               return;
             }
 
@@ -63,147 +66,54 @@ namespace Soldunzh {
             var card2 = this.room[1];
             var card3 = this.room[2];
             var card4 = this.room[3];
+            make_card (card1);
+            make_card (card2);
+            make_card (card3);
+            make_card (card4);
+        }
 
-            mw.card1_strength.label = card1.symbol; mw.card1_name.label = card1.name + " " + (Math.floor(card1.val * 100)).to_string ();
-            mw.card2_strength.label = card2.symbol; mw.card2_name.label = card2.name + " " + (Math.floor(card2.val * 100)).to_string ();
-            mw.card3_strength.label = card3.symbol; mw.card3_name.label = card3.name + " " + (Math.floor(card3.val * 100)).to_string ();
-            mw.card4_strength.label = card4.symbol; mw.card4_name.label = card4.name + " " + (Math.floor(card4.val * 100)).to_string ();
-
-            if (card1.ctype == HEART) {
-                mw.card1_suit.label = "♥";
-                mw.card1_suit.add_css_class ("red-label");
-                mw.card1_strength.add_css_class ("red-label");
-                mw.card1_suit.remove_css_class ("black-label");
-                mw.card1_strength.remove_css_class ("black-label");
-            } else if (card1.ctype == CLOVE) {
-                mw.card1_suit.label = "♣";
-                mw.card1_suit.add_css_class ("black-label");
-                mw.card1_strength.add_css_class ("black-label");
-                mw.card1_suit.remove_css_class ("red-label");
-                mw.card1_strength.remove_css_class ("red-label");
-            } else if (card1.ctype == SPADE) {
-                mw.card1_suit.label = "♠";
-                mw.card1_suit.add_css_class ("black-label");
-                mw.card1_strength.add_css_class ("black-label");
-                mw.card1_suit.remove_css_class ("red-label");
-                mw.card1_strength.remove_css_class ("red-label");
-            } else if (card1.ctype == DIAMOND) {
-                mw.card1_suit.label = "♦";
-                mw.card1_suit.add_css_class ("red-label");
-                mw.card1_strength.add_css_class ("red-label");
-                mw.card1_suit.remove_css_class ("black-label");
-                mw.card1_strength.remove_css_class ("black-label");
+        private void make_card (Card card) {
+            card.mw = this.mw;
+            card.card_strength.label = card.symbol; card.card_name.label = card.name + " " + (Math.floor(card.val * 100)).to_string ();
+            if (card.ctype == HEART) {
+                card.card_suit.label = "♥";
+                card.card_suit.add_css_class ("red-label");
+                card.card_strength.add_css_class ("red-label");
+                card.card_suit.remove_css_class ("black-label");
+                card.card_strength.remove_css_class ("black-label");
+            } else if (card.ctype == CLOVE) {
+                card.card_suit.label = "♣";
+                card.card_suit.add_css_class ("black-label");
+                card.card_strength.add_css_class ("black-label");
+                card.card_suit.remove_css_class ("red-label");
+                card.card_strength.remove_css_class ("red-label");
+            } else if (card.ctype == SPADE) {
+                card.card_suit.label = "♠";
+                card.card_suit.add_css_class ("black-label");
+                card.card_strength.add_css_class ("black-label");
+                card.card_suit.remove_css_class ("red-label");
+                card.card_strength.remove_css_class ("red-label");
+            } else if (card.ctype == DIAMOND) {
+                card.card_suit.label = "♦";
+                card.card_suit.add_css_class ("red-label");
+                card.card_strength.add_css_class ("red-label");
+                card.card_suit.remove_css_class ("black-label");
+                card.card_strength.remove_css_class ("black-label");
             } else {
-                mw.card1_suit.label = "👁";
-                mw.card1_suit.add_css_class ("red-label");
-                mw.card1_strength.add_css_class ("black-label");
-                mw.card1_suit.remove_css_class ("black-label");
-                mw.card1_strength.remove_css_class ("red-label");
-            }
-
-            if (card2.ctype == HEART) {
-                mw.card2_suit.label = "♥";
-                mw.card2_suit.add_css_class ("red-label");
-                mw.card2_strength.add_css_class ("red-label");
-                mw.card2_suit.remove_css_class ("black-label");
-                mw.card2_strength.remove_css_class ("black-label");
-            } else if (card2.ctype == CLOVE) {
-                mw.card2_suit.label = "♣";
-                mw.card2_suit.add_css_class ("black-label");
-                mw.card2_strength.add_css_class ("black-label");
-                mw.card2_suit.remove_css_class ("red-label");
-                mw.card2_strength.remove_css_class ("red-label");
-            } else if (card2.ctype == SPADE) {
-                mw.card2_suit.label = "♠";
-                mw.card2_suit.add_css_class ("black-label");
-                mw.card2_strength.add_css_class ("black-label");
-                mw.card2_suit.remove_css_class ("red-label");
-                mw.card2_strength.remove_css_class ("red-label");
-            } else if (card2.ctype == DIAMOND) {
-                mw.card2_suit.label = "♦";
-                mw.card2_suit.add_css_class ("red-label");
-                mw.card2_strength.add_css_class ("red-label");
-                mw.card2_suit.remove_css_class ("black-label");
-                mw.card2_strength.remove_css_class ("black-label");
-            } else {
-                mw.card2_suit.label = "👁";
-                mw.card2_suit.add_css_class ("red-label");
-                mw.card2_strength.add_css_class ("black-label");
-                mw.card2_suit.remove_css_class ("black-label");
-                mw.card2_strength.remove_css_class ("red-label");
-            }
-
-            if (card3.ctype == HEART) {
-                mw.card3_suit.label = "♥";
-                mw.card3_suit.add_css_class ("red-label");
-                mw.card3_strength.add_css_class ("red-label");
-                mw.card3_suit.remove_css_class ("black-label");
-                mw.card3_strength.remove_css_class ("black-label");
-            } else if (card3.ctype == CLOVE) {
-                mw.card3_suit.label = "♣";
-                mw.card3_suit.add_css_class ("black-label");
-                mw.card3_strength.add_css_class ("black-label");
-                mw.card3_suit.remove_css_class ("red-label");
-                mw.card3_strength.remove_css_class ("red-label");
-            } else if (card3.ctype == SPADE) {
-                mw.card3_suit.label = "♠";
-                mw.card3_suit.add_css_class ("black-label");
-                mw.card3_strength.add_css_class ("black-label");
-                mw.card3_suit.remove_css_class ("red-label");
-                mw.card3_strength.remove_css_class ("red-label");
-            } else if (card3.ctype == DIAMOND) {
-                mw.card3_suit.label = "♦";
-                mw.card3_suit.add_css_class ("red-label");
-                mw.card3_strength.add_css_class ("red-label");
-                mw.card3_suit.remove_css_class ("black-label");
-                mw.card3_strength.remove_css_class ("black-label");
-            } else {
-                mw.card3_suit.label = "👁";
-                mw.card3_suit.add_css_class ("red-label");
-                mw.card3_strength.add_css_class ("black-label");
-                mw.card3_suit.remove_css_class ("black-label");
-                mw.card3_strength.remove_css_class ("red-label");
-            }
-
-            if (card4.ctype == HEART) {
-                mw.card4_suit.label = "♥";
-                mw.card4_suit.add_css_class ("red-label");
-                mw.card4_strength.add_css_class ("red-label");
-                mw.card4_suit.remove_css_class ("black-label");
-                mw.card4_strength.remove_css_class ("black-label");
-            } else if (card4.ctype == CLOVE) {
-                mw.card4_suit.label = "♣";
-                mw.card4_suit.add_css_class ("black-label");
-                mw.card4_strength.add_css_class ("black-label");
-                mw.card4_suit.remove_css_class ("red-label");
-                mw.card4_strength.remove_css_class ("red-label");
-            } else if (card4.ctype == SPADE) {
-                mw.card4_suit.label = "♠";
-                mw.card4_suit.add_css_class ("black-label");
-                mw.card4_strength.add_css_class ("black-label");
-                mw.card4_suit.remove_css_class ("red-label");
-                mw.card4_strength.remove_css_class ("red-label");
-            } else if (card4.ctype == DIAMOND) {
-                mw.card4_suit.label = "♦";
-                mw.card4_suit.add_css_class ("red-label");
-                mw.card4_strength.add_css_class ("red-label");
-                mw.card4_suit.remove_css_class ("black-label");
-                mw.card4_strength.remove_css_class ("black-label");
-            } else {
-                mw.card4_suit.label = "👁";
-                mw.card4_suit.add_css_class ("red-label");
-                mw.card4_strength.add_css_class ("black-label");
-                mw.card4_suit.remove_css_class ("black-label");
-                mw.card4_strength.remove_css_class ("red-label");
+                card.card_suit.label = "👁";
+                card.card_suit.add_css_class ("red-label");
+                card.card_strength.add_css_class ("black-label");
+                card.card_suit.remove_css_class ("black-label");
+                card.card_strength.remove_css_class ("red-label");
             }
         }
 
         public void dungeon_complete () {
             mw.is_complete = true;
-            mw.card1.add_css_class ("flipped");
-            mw.card2.add_css_class ("flipped");
-            mw.card3.add_css_class ("flipped");
-            mw.card4.add_css_class ("flipped");
+            this.room[0].add_css_class ("flipped");
+            this.room[1].add_css_class ("flipped");
+            this.room[2].add_css_class ("flipped");
+            this.room[3].add_css_class ("flipped");
             var dialog = new Adw.MessageDialog (mw, _("You Won!"), null);
 		        dialog.set_body (_("The player conquered Soldunzh."));
 		        dialog.add_response ("cancel", _("Cancel"));
