@@ -9,10 +9,16 @@ namespace Soldunzh {
         public void enter_room (bool starting_hand) {
             remove_cards ();
 
-            if (mw.deck.cards.length > 0) {
+            if (mw.deck.cards.size > 0) {
               add_card (0, mw.deck.draw_card(starting_hand ? DIAMOND : ""));
+            }
+            if (mw.deck.cards.size > 0) {
               add_card (1, mw.deck.draw_card(starting_hand ? CLOVE : ""));
+            }
+            if (mw.deck.cards.size > 0) {
               add_card (2, mw.deck.draw_card(starting_hand ? HEART : ""));
+            }
+            if (mw.deck.cards.size > 0) {
               add_card (3, mw.deck.draw_card(starting_hand ? SPADE : ""));
             }
 
@@ -116,18 +122,15 @@ namespace Soldunzh {
             this.room[3].add_css_class ("flipped");
             var dialog = new Adw.MessageDialog (mw, _("You Won!"), null);
 		        dialog.set_body (_("The player conquered Soldunzh."));
-		        dialog.add_response ("cancel", _("Cancel"));
 		        dialog.add_response ("clear",  _("New Game"));
 		        dialog.set_response_appearance ("clear", Adw.ResponseAppearance.SUGGESTED);
 		        dialog.set_default_response ("clear");
-		        dialog.set_close_response ("cancel");
 		        dialog.response.connect ((response) => {
 		            switch (response) {
 		                case "clear":
 		                    mw.stack.set_visible_child_name ("overview");
 		                    dialog.close ();
 		                    break;
-		                case "cancel":
 		                default:
 		                    dialog.close ();
 		                    return;

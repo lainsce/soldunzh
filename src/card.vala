@@ -47,6 +47,7 @@ namespace Soldunzh {
                 mw.gauge_hp.text = "%0.0f HP".printf(mw.player.health.val * 100);
                 mw.gauge_sp.text = "%0.0f / %0.0f SP".printf(mw.player.shield.val * 100, mw.player.shield.break_limit * 100);
                 mw.gauge_xp.text = "%0.0f XP".printf(mw.player.exp.val * 100);
+                mw.deck.cards.remove(this);
             });
         }
 
