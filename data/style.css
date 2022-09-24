@@ -1,7 +1,11 @@
-@define-color accent_color #ab3232;
-@define-color accent_bg_color #ab3232;
+@define-color accent_color #ff2851;
+@define-color accent_bg_color #ff2851;
 @define-color window_bg_color #fafafa;
-@define-color headerbar_bg_color #fff;
+@define-color headerbar_bg_color #fafafa;
+
+window * {
+  font-family: "Cantarell", sans-serif;
+}
 
 .fab {
   box-shadow: 0 4px 8px 4px alpha(@accent_color, 0.15);
@@ -13,7 +17,7 @@
 }
 
 .gauge_hp trough progress {
-  background: #ab3232;
+  background: #ff2851;
 }
 .gauge_sp trough progress {
   background: #75dec2;
@@ -22,12 +26,16 @@
   background: #000;
 }
 
-.destructive-label {
-  color: #ab3232;
+.red-label {
+  color: #ff2851;
+}
+.black-label {
+  color: #27262b;
 }
 
 .card.flipped {
-  background: #aaa;
+  background: #363636;
+  box-shadow: 0 0 3px #363636;
 }
 .flipped * {
   opacity: 0.2;
@@ -45,7 +53,7 @@
 }
 
 .soldunzh {
-  background-color: #f0f0f2;
+  background-color: #fafafa;
   background-image: url(resource://io/github/lainsce/Soldunzh/bg.svg);
   background-position: 0% 0%;
   background-repeat: repeat;
@@ -55,7 +63,7 @@
   background: #fff;
   color: #000;
   border-radius: 16px;
-  box-shadow: 0 4px 2px 0 #666;
+  box-shadow: 0 4px 2px 0 #363636;
 }
 
 .timeline {

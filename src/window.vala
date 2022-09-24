@@ -99,9 +99,9 @@ namespace Soldunzh {
                     difficulty = 0;
 		            player = new Player (this);
 		            player.install ();
-		            gauge_hp.text = "HP: %0.0f".printf(player.health.val * 100);
-		            gauge_sp.text = "SP: %0.0f / %0.0f".printf(player.shield.val * 100, player.shield.break_limit * 100);
-		            gauge_xp.text = "XP: %0.0f".printf(player.exp.val * 100);
+		            gauge_hp.text = "%0.0f HP".printf(player.health.val * 100);
+		            gauge_sp.text = "%0.0f / %0.0f SP".printf(player.shield.val * 100, player.shield.break_limit * 100);
+		            gauge_xp.text = "%0.0f XP".printf(player.exp.val * 100);
 		            gauge_hp.fraction = player.health.val;
 		            gauge_sp.fraction = player.shield.val;
 		            gauge_xp.fraction = player.exp.val;
@@ -129,9 +129,9 @@ namespace Soldunzh {
                         gauge_hp.fraction = player.health.val;
 		                gauge_sp.fraction = player.shield.val;
 		                gauge_xp.fraction = player.exp.val;
-		                gauge_hp.text = "HP: %0.0f".printf(player.health.val * 100);
-		                gauge_sp.text = "SP: %0.0f / %0.0f".printf(player.shield.val * 100, player.shield.break_limit * 100);
-		                gauge_xp.text = "XP: %0.0f".printf(player.exp.val * 100);
+		                gauge_hp.text = "%0.0f HP".printf(player.health.val * 100);
+		                gauge_sp.text = "%0.0f / %0.0f SP".printf(player.shield.val * 100, player.shield.break_limit * 100);
+		                gauge_xp.text = "%0.0f XP".printf(player.exp.val * 100);
                     });
 		            card2.clicked.connect (() => {
                         //
@@ -145,9 +145,9 @@ namespace Soldunzh {
                         gauge_hp.fraction = player.health.val;
 		                gauge_sp.fraction = player.shield.val;
 		                gauge_xp.fraction = player.exp.val;
-		                gauge_hp.text = "HP: %0.0f".printf(player.health.val * 100);
-		                gauge_sp.text = "SP: %0.0f / %0.0f".printf(player.shield.val * 100, player.shield.break_limit * 100);
-		                gauge_xp.text = "XP: %0.0f".printf(player.exp.val * 100);
+		                gauge_hp.text = "%0.0f HP".printf(player.health.val * 100);
+		                gauge_sp.text = "%0.0f / %0.0f SP".printf(player.shield.val * 100, player.shield.break_limit * 100);
+		                gauge_xp.text = "%0.0f XP".printf(player.exp.val * 100);
                     });
 		            card3.clicked.connect (() => {
                         //
@@ -161,9 +161,9 @@ namespace Soldunzh {
                         gauge_hp.fraction = player.health.val;
 		                gauge_sp.fraction = player.shield.val;
 		                gauge_xp.fraction = player.exp.val;
-		                gauge_hp.text = "HP: %0.0f".printf(player.health.val * 100);
-		                gauge_sp.text = "SP: %0.0f / %0.0f".printf(player.shield.val * 100, player.shield.break_limit * 100);
-		                gauge_xp.text = "XP: %0.0f".printf(player.exp.val * 100);
+		                gauge_hp.text = "%0.0f HP".printf(player.health.val * 100);
+		                gauge_sp.text = "%0.0f / %0.0f SP".printf(player.shield.val * 100, player.shield.break_limit * 100);
+		                gauge_xp.text = "%0.0f XP".printf(player.exp.val * 100);
                     });
 		            card4.clicked.connect (() => {
                         //
@@ -177,9 +177,9 @@ namespace Soldunzh {
                         gauge_hp.fraction = player.health.val;
 		                gauge_sp.fraction = player.shield.val;
 		                gauge_xp.fraction = player.exp.val;
-		                gauge_hp.text = "HP: %0.0f".printf(player.health.val * 100);
-		                gauge_sp.text = "SP: %0.0f / %0.0f".printf(player.shield.val * 100, player.shield.break_limit * 100);
-		                gauge_xp.text = "XP: %0.0f".printf(player.exp.val * 100);
+		                gauge_hp.text = "%0.0f HP".printf(player.health.val * 100);
+		                gauge_sp.text = "%0.0f / %0.0f SP".printf(player.shield.val * 100, player.shield.break_limit * 100);
+		                gauge_xp.text = "%0.0f XP".printf(player.exp.val * 100);
                     });
 		        } else if (normal_button.active) {
 		            stack.set_visible_child_name ("game");
@@ -189,9 +189,9 @@ namespace Soldunzh {
 		            gauge_hp.fraction = player.health.val;
 		            gauge_sp.fraction = player.shield.val;
 		            gauge_xp.fraction = player.exp.val;
-		            gauge_hp.text = "HP: %0.0f".printf(player.health.val * 100);
-		            gauge_sp.text = "SP: %0.0f / %0.0f".printf(player.shield.val * 100, player.shield.break_limit * 100);
-		            gauge_xp.text = "XP: %0.0f".printf(player.exp.val * 100);
+		            gauge_hp.text = "%0.0f HP".printf(player.health.val * 100);
+		            gauge_sp.text = "%0.0f / %0.0f SP".printf(player.shield.val * 100, player.shield.break_limit * 100);
+		            gauge_xp.text = "%0.0f XP".printf(player.exp.val * 100);
 		            deck = new Deck ();
 		            board = new Board (this);
 		            deck.start ();
@@ -216,9 +216,9 @@ namespace Soldunzh {
                         gauge_hp.fraction = player.health.val;
 		                gauge_sp.fraction = player.shield.val;
 		                gauge_xp.fraction = player.exp.val;
-		                gauge_hp.text = "HP: %0.0f".printf(player.health.val * 100);
-		                gauge_sp.text = "SP: %0.0f / %0.0f".printf(player.shield.val * 100, player.shield.break_limit * 100);
-		                gauge_xp.text = "XP: %0.0f".printf(player.exp.val * 100);
+		                gauge_hp.text = "%0.0f HP".printf(player.health.val * 100);
+		                gauge_sp.text = "%0.0f / %0.0f SP".printf(player.shield.val * 100, player.shield.break_limit * 100);
+		                gauge_xp.text = "%0.0f XP".printf(player.exp.val * 100);
                     });
 		            card2.clicked.connect (() => {
                         //
@@ -232,9 +232,9 @@ namespace Soldunzh {
                         gauge_hp.fraction = player.health.val;
 		                gauge_sp.fraction = player.shield.val;
 		                gauge_xp.fraction = player.exp.val;
-		                gauge_hp.text = "HP: %0.0f".printf(player.health.val * 100);
-		                gauge_sp.text = "SP: %0.0f / %0.0f".printf(player.shield.val * 100, player.shield.break_limit * 100);
-		                gauge_xp.text = "XP: %0.0f".printf(player.exp.val * 100);
+		                gauge_hp.text = "%0.0f HP".printf(player.health.val * 100);
+		                gauge_sp.text = "%0.0f / %0.0f SP".printf(player.shield.val * 100, player.shield.break_limit * 100);
+		                gauge_xp.text = "%0.0f XP".printf(player.exp.val * 100);
                     });
 		            card3.clicked.connect (() => {
                         //
@@ -248,9 +248,9 @@ namespace Soldunzh {
                         gauge_hp.fraction = player.health.val;
 		                gauge_sp.fraction = player.shield.val;
 		                gauge_xp.fraction = player.exp.val;
-		                gauge_hp.text = "HP: %0.0f".printf(player.health.val * 100);
-		                gauge_sp.text = "SP: %0.0f / %0.0f".printf(player.shield.val * 100, player.shield.break_limit * 100);
-		                gauge_xp.text = "XP: %0.0f".printf(player.exp.val * 100);
+		                gauge_hp.text = "%0.0f HP".printf(player.health.val * 100);
+		                gauge_sp.text = "%0.0f / %0.0f SP".printf(player.shield.val * 100, player.shield.break_limit * 100);
+		                gauge_xp.text = "%0.0f XP".printf(player.exp.val * 100);
                     });
 		            card4.clicked.connect (() => {
                         //
@@ -264,9 +264,9 @@ namespace Soldunzh {
                         gauge_hp.fraction = player.health.val;
 		                gauge_sp.fraction = player.shield.val;
 		                gauge_xp.fraction = player.exp.val;
-		                gauge_hp.text = "HP: %0.0f".printf(player.health.val * 100);
-		                gauge_sp.text = "SP: %0.0f / %0.0f".printf(player.shield.val * 100, player.shield.break_limit * 100);
-		                gauge_xp.text = "XP: %0.0f".printf(player.exp.val * 100);
+		                gauge_hp.text = "%0.0f HP".printf(player.health.val * 100);
+		                gauge_sp.text = "%0.0f / %0.0f SP".printf(player.shield.val * 100, player.shield.break_limit * 100);
+		                gauge_xp.text = "%0.0f XP".printf(player.exp.val * 100);
                     });
 		        } else if (hard_button.active) {
 		            stack.set_visible_child_name ("game");
@@ -276,9 +276,9 @@ namespace Soldunzh {
 		            gauge_hp.fraction = player.health.val;
 		            gauge_sp.fraction = player.shield.val;
 		            gauge_xp.fraction = player.exp.val;
-		            gauge_hp.text = "HP: %0.0f".printf(player.health.val * 100);
-		            gauge_sp.text = "SP: %0.0f / %0.0f".printf(player.shield.val * 100, player.shield.break_limit * 100);
-		            gauge_xp.text = "XP: %0.0f".printf(player.exp.val * 100);
+		            gauge_hp.text = "%0.0f HP".printf(player.health.val * 100);
+		            gauge_sp.text = "%0.0f / %0.0f SP".printf(player.shield.val * 100, player.shield.break_limit * 100);
+		            gauge_xp.text = "%0.0f XP".printf(player.exp.val * 100);
 		            deck = new Deck ();
 		            board = new Board (this);
 		            deck.start ();
@@ -303,9 +303,9 @@ namespace Soldunzh {
                         gauge_hp.fraction = player.health.val;
 		                gauge_sp.fraction = player.shield.val;
 		                gauge_xp.fraction = player.exp.val;
-		                gauge_hp.text = "HP: %0.0f".printf(player.health.val * 100);
-		                gauge_sp.text = "SP: %0.0f / %0.0f".printf(player.shield.val * 100, player.shield.break_limit * 100);
-		                gauge_xp.text = "XP: %0.0f".printf(player.exp.val * 100);
+		                gauge_hp.text = "%0.0f HP".printf(player.health.val * 100);
+		                gauge_sp.text = "%0.0f / %0.0f SP".printf(player.shield.val * 100, player.shield.break_limit * 100);
+		                gauge_xp.text = "%0.0f XP".printf(player.exp.val * 100);
                     });
 		            card2.clicked.connect (() => {
                         //
@@ -319,9 +319,9 @@ namespace Soldunzh {
                         gauge_hp.fraction = player.health.val;
 		                gauge_sp.fraction = player.shield.val;
 		                gauge_xp.fraction = player.exp.val;
-		                gauge_hp.text = "HP: %0.0f".printf(player.health.val * 100);
-		                gauge_sp.text = "SP: %0.0f / %0.0f".printf(player.shield.val * 100, player.shield.break_limit * 100);
-		                gauge_xp.text = "XP: %0.0f".printf(player.exp.val * 100);
+		                gauge_hp.text = "%0.0f HP".printf(player.health.val * 100);
+		                gauge_sp.text = "%0.0f / %0.0f SP".printf(player.shield.val * 100, player.shield.break_limit * 100);
+		                gauge_xp.text = "%0.0f XP".printf(player.exp.val * 100);
                     });
 		            card3.clicked.connect (() => {
                         //
@@ -335,9 +335,9 @@ namespace Soldunzh {
                         gauge_hp.fraction = player.health.val;
 		                gauge_sp.fraction = player.shield.val;
 		                gauge_xp.fraction = player.exp.val;
-		                gauge_hp.text = "HP: %0.0f".printf(player.health.val * 100);
-		                gauge_sp.text = "SP: %0.0f / %0.0f".printf(player.shield.val * 100, player.shield.break_limit * 100);
-		                gauge_xp.text = "XP: %0.0f".printf(player.exp.val * 100);
+		                gauge_hp.text = "%0.0f HP".printf(player.health.val * 100);
+		                gauge_sp.text = "%0.0f / %0.0f SP".printf(player.shield.val * 100, player.shield.break_limit * 100);
+		                gauge_xp.text = "%0.0f XP".printf(player.exp.val * 100);
                     });
 		            card4.clicked.connect (() => {
                         //
@@ -351,9 +351,9 @@ namespace Soldunzh {
                         gauge_hp.fraction = player.health.val;
 		                gauge_sp.fraction = player.shield.val;
 		                gauge_xp.fraction = player.exp.val;
-		                gauge_hp.text = "HP: %0.0f".printf(player.health.val * 100);
-		                gauge_sp.text = "SP: %0.0f / %0.0f".printf(player.shield.val * 100, player.shield.break_limit * 100);
-		                gauge_xp.text = "XP: %0.0f".printf(player.exp.val * 100);
+		                gauge_hp.text = "%0.0f HP".printf(player.health.val * 100);
+		                gauge_sp.text = "%0.0f / %0.0f SP".printf(player.shield.val * 100, player.shield.break_limit * 100);
+		                gauge_xp.text = "%0.0f XP".printf(player.exp.val * 100);
                     });
 		        } else {
 		            // UB: set as easy then.
@@ -364,9 +364,9 @@ namespace Soldunzh {
 		            gauge_hp.fraction = player.health.val;
 		            gauge_sp.fraction = player.shield.val;
 		            gauge_xp.fraction = player.exp.val;
-		            gauge_hp.text = "HP: %0.0f".printf(player.health.val * 100);
-		            gauge_sp.text = "SP: %0.0f / %0.0f".printf(player.shield.val * 100, player.shield.break_limit * 100);
-		            gauge_xp.text = "XP: %0.0f".printf(player.exp.val * 100);
+		            gauge_hp.text = "%0.0f HP".printf(player.health.val * 100);
+		            gauge_sp.text = "%0.0f / %0.0f SP".printf(player.shield.val * 100, player.shield.break_limit * 100);
+		            gauge_xp.text = "%0.0f XP".printf(player.exp.val * 100);
 		            deck = new Deck ();
 		            board = new Board (this);
 		            deck.start ();
@@ -391,9 +391,9 @@ namespace Soldunzh {
                         gauge_hp.fraction = player.health.val;
 		                gauge_sp.fraction = player.shield.val;
 		                gauge_xp.fraction = player.exp.val;
-		                gauge_hp.text = "HP: %0.0f".printf(player.health.val * 100);
-		                gauge_sp.text = "SP: %0.0f / %0.0f".printf(player.shield.val * 100, player.shield.break_limit * 100);
-		                gauge_xp.text = "XP: %0.0f".printf(player.exp.val * 100);
+		                gauge_hp.text = "%0.0f HP".printf(player.health.val * 100);
+		                gauge_sp.text = "%0.0f / %0.0f SP".printf(player.shield.val * 100, player.shield.break_limit * 100);
+		                gauge_xp.text = "%0.0f XP".printf(player.exp.val * 100);
                     });
 		            card2.clicked.connect (() => {
                         //
@@ -407,9 +407,9 @@ namespace Soldunzh {
                         gauge_hp.fraction = player.health.val;
 		                gauge_sp.fraction = player.shield.val;
 		                gauge_xp.fraction = player.exp.val;
-		                gauge_hp.text = "HP: %0.0f".printf(player.health.val * 100);
-		                gauge_sp.text = "SP: %0.0f / %0.0f".printf(player.shield.val * 100, player.shield.break_limit * 100);
-		                gauge_xp.text = "XP: %0.0f".printf(player.exp.val * 100);
+		                gauge_hp.text = "%0.0f HP".printf(player.health.val * 100);
+		                gauge_sp.text = "%0.0f / %0.0f SP".printf(player.shield.val * 100, player.shield.break_limit * 100);
+		                gauge_xp.text = "%0.0f XP".printf(player.exp.val * 100);
                     });
 		            card3.clicked.connect (() => {
                         //
@@ -423,9 +423,9 @@ namespace Soldunzh {
                         gauge_hp.fraction = player.health.val;
 		                gauge_sp.fraction = player.shield.val;
 		                gauge_xp.fraction = player.exp.val;
-		                gauge_hp.text = "HP: %0.0f".printf(player.health.val * 100);
-		                gauge_sp.text = "SP: %0.0f / %0.0f".printf(player.shield.val * 100, player.shield.break_limit * 100);
-		                gauge_xp.text = "XP: %0.0f".printf(player.exp.val * 100);
+		                gauge_hp.text = "%0.0f HP".printf(player.health.val * 100);
+		                gauge_sp.text = "%0.0f / %0.0f SP".printf(player.shield.val * 100, player.shield.break_limit * 100);
+		                gauge_xp.text = "%0.0f XP".printf(player.exp.val * 100);
                     });
 		            card4.clicked.connect (() => {
                         //
@@ -439,9 +439,9 @@ namespace Soldunzh {
                         gauge_hp.fraction = player.health.val;
 		                gauge_sp.fraction = player.shield.val;
 		                gauge_xp.fraction = player.exp.val;
-		                gauge_hp.text = "HP: %0.0f".printf(player.health.val * 100);
-		                gauge_sp.text = "SP: %0.0f / %0.0f".printf(player.shield.val * 100, player.shield.break_limit * 100);
-		                gauge_xp.text = "XP: %0.0f".printf(player.exp.val * 100);
+		                gauge_hp.text = "%0.0f HP".printf(player.health.val * 100);
+		                gauge_sp.text = "%0.0f / %0.0f SP".printf(player.shield.val * 100, player.shield.break_limit * 100);
+		                gauge_xp.text = "%0.0f XP".printf(player.exp.val * 100);
                     });
 		        }
             });

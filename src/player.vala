@@ -130,7 +130,7 @@ namespace Soldunzh {
             }
             var new_health = this.health.val + (potion_value);
 
-            this.health.val = new_health;
+            this.health.val = new_health <= 0.21 ? new_health : 0.21;
             this.can_drink = false;
             mw.is_complete = false;
             mw.msg = (_("Drank potion."));
@@ -150,7 +150,7 @@ namespace Soldunzh {
             this.can_drink = true;
 
             mw.board.return_cards();
-            mw.board.enter_room();
+            mw.board.enter_room(false);
             mw.msg = (_("Escaped the room!"));
 		    mw.timeline.set_text (mw.msg);
             mw.card1.remove_css_class ("flipped");

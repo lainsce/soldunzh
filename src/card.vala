@@ -1,16 +1,14 @@
 namespace Soldunzh {
-    public enum CardType {
-        HEART,
-        DIAMOND,
-        CLOVE,
-        SPADE,
-        JOKER
-    }
+    public const string HEART = "heart";
+    public const string CLOVE = "clove";
+    public const string DIAMOND = "diamond";
+    public const string SPADE = "spade";
+    public const string JOKER = "joker";
 
     public class Card : Gtk.Widget {
         public string symbol {get; set;}
         public double val {get; set;}
-        public CardType ctype {get; set;}
+        public string ctype {get; set;}
         public new string name {get; set;}
         public string cprop {get; set;}
 
@@ -18,16 +16,12 @@ namespace Soldunzh {
 
         public MainWindow mw {get; set;}
 
-        public Card (string sym, double val, CardType ctype, string name = "Unknown", string cprop) {
+        public Card (string sym, double val, string ctype, string name = "Unknown", string cprop) {
             this.symbol = sym;
             this.val = val;
             this.ctype = ctype;
             this.name = name;
             this.cprop = cprop;
-        }
-
-        construct {
-            this.is_flipped = false;
         }
 
         public void touch (MainWindow mw) {

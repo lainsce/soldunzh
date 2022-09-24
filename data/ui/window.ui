@@ -166,14 +166,14 @@
 												<child>
 													<object class="GtkBox">
 														<property name="orientation">vertical</property>
-														<property name="margin-start">12</property>
-														<property name="margin-end">12</property>
-														<property name="margin-top">12</property>
-														<property name="margin-bottom">12</property>
-														<property name="spacing">12</property>
+														<property name="margin-start">30</property>
+														<property name="margin-end">30</property>
+														<property name="margin-top">15</property>
+														<property name="margin-bottom">15</property>
+														<property name="spacing">30</property>
 														<child>
 															<object class="GtkBox">
-																<property name="spacing">24</property>
+																<property name="spacing">30</property>
 																<property name="homogeneous">true</property>
 																<property name="height-request">330</property>
 																<child>
@@ -185,8 +185,8 @@
 																				<property name="width-request">200</property>
 																				<child>
 																					<object class="GtkLabel" id="card1_strength">
-																						<property name="margin-top">12</property>
-																						<property name="margin-start">12</property>
+																						<property name="margin-top">15</property>
+																						<property name="margin-start">15</property>
 																						<property name="halign">start</property>
 																					  <property name="valign">start</property>
 																						<style>
@@ -205,7 +205,7 @@
 																					<object class="GtkLabel" id="card1_name">
 																						<property name="halign">center</property>
 																					  <property name="valign">end</property>
-																					  <property name="margin-bottom">12</property>
+																					  <property name="margin-bottom">15</property>
 																						<style>
 																							<class name="title"/>
 																						</style>
@@ -227,8 +227,8 @@
 																				<property name="width-request">200</property>
 																				<child>
 																					<object class="GtkLabel" id="card2_strength">
-																						<property name="margin-top">12</property>
-																						<property name="margin-start">12</property>
+																						<property name="margin-top">15</property>
+																						<property name="margin-start">15</property>
 																						<property name="halign">start</property>
 																					  <property name="valign">start</property>
 																						<style>
@@ -247,7 +247,7 @@
 																					<object class="GtkLabel" id="card2_name">
 																						<property name="halign">center</property>
 																					  <property name="valign">end</property>
-																					  <property name="margin-bottom">12</property>
+																					  <property name="margin-bottom">15</property>
 																						<style>
 																							<class name="title"/>
 																						</style>
@@ -269,8 +269,8 @@
 																				<property name="width-request">200</property>
 																				<child>
 																					<object class="GtkLabel" id="card3_strength">
-																						<property name="margin-top">12</property>
-																						<property name="margin-start">12</property>
+																						<property name="margin-top">15</property>
+																						<property name="margin-start">15</property>
 																						<property name="halign">start</property>
 																					  <property name="valign">start</property>
 																						<style>
@@ -289,7 +289,7 @@
 																					<object class="GtkLabel" id="card3_name">
 																						<property name="halign">center</property>
 																					  <property name="valign">end</property>
-																					  <property name="margin-bottom">12</property>
+																					  <property name="margin-bottom">15</property>
 																						<style>
 																							<class name="title"/>
 																						</style>
@@ -311,8 +311,8 @@
 																				<property name="width-request">200</property>
 																				<child>
 																					<object class="GtkLabel" id="card4_strength">
-																						<property name="margin-top">12</property>
-																						<property name="margin-start">12</property>
+																						<property name="margin-top">15</property>
+																						<property name="margin-start">15</property>
 																						<property name="halign">start</property>
 																					  <property name="valign">start</property>
 																						<style>
@@ -331,7 +331,7 @@
 																					<object class="GtkLabel" id="card4_name">
 																						<property name="halign">center</property>
 																					  <property name="valign">end</property>
-																					  <property name="margin-bottom">12</property>
+																					  <property name="margin-bottom">15</property>
 																						<style>
 																							<class name="title"/>
 																						</style>

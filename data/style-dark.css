@@ -1,7 +1,7 @@
 @define-color accent_color #ab3232;
 @define-color accent_bg_color #ab3232;
 @define-color window_bg_color #000;
-@define-color headerbar_bg_color #111;
+@define-color headerbar_bg_color #000;
 
 .gauge_xp trough progress {
   background: #eee;
@@ -15,7 +15,8 @@
 }
 
 .card.flipped {
-  background: #333;
+  background: #363636;
+  box-shadow: 0 0 3px #363636;
 }
 
 .timeline {
