@@ -14,9 +14,9 @@ Venture through perilous lands…
 
 ## 💝 Donations
 
-Would you like to support the development of this app to new heights? Then:
+Donate to the original author, as Soldunzh is a GTK4 port of Donsol by Hundred Rabbits.
 
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/lainsce)
+![](https://www.patreon.com/100)
 
 ## 🛠️ Dependencies
 
