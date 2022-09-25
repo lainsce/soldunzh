@@ -16,7 +16,7 @@ Venture through perilous lands…
 
 Donate to the original author, as Soldunzh is a GTK4 port of Donsol by Hundred Rabbits.
 
-[](https://www.patreon.com/100)
+[Hundred Rabbits Patreon](https://www.patreon.com/100)
 
 ## 🛠️ Dependencies
 
