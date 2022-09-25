@@ -58,7 +58,7 @@ namespace Soldunzh {
                 developer_name = "Paulo \"Lains\" Galardi",
                 version = "0.1.0",
                 developers = developers,
-                copyright = "© 2022 Paulo \"Lains\" Galardi\n© 2016 Hundred Rabbits (idea)",
+                copyright = "© 2022 Paulo \"Lains\" Galardi\n© 2016 Hundred Rabbits (Artwork)",
             };
 
             about.present ();

@@ -162,7 +162,7 @@
 											</object>
 										</child>
 										<child>
-											<object class="AdwClamp">
+											<object class="GtkBox">
 												<child>
 													<object class="GtkBox">
 														<property name="orientation">vertical</property>
@@ -171,13 +171,108 @@
 														<property name="margin-top">15</property>
 														<property name="margin-bottom">15</property>
 														<property name="spacing">30</property>
-														<child>
-															<object class="GtkBox" id="card_holder">
-																<property name="spacing">30</property>
-																<property name="homogeneous">true</property>
-																<property name="height-request">330</property>
-														  </object>
-														</child>
+													  <child>
+													    <object class="GtkOverlay">
+													      <property name="vexpand">1</property>
+													      <property name="hexpand">1</property>
+													      <property name="height-request">300</property>
+													      <child>
+													        <object class="GtkBox">
+													          <property name="spacing">30</property>
+													          <child>
+													            <object class="GtkBox">
+													              <property name="orientation">vertical</property>
+			                                  <property name="homogeneous">true</property>
+			                                  <property name="width-request">200</property>
+													              <child>
+													                <object class="GtkLabel">
+													                  <property name="vexpand">1</property>
+													                  <property name="hexpand">1</property>
+													                  <property name="valign">end</property>
+													                  <property name="halign">end</property>
+													                  <property name="margin-bottom">12</property>
+													                  <property name="margin-end">12</property>
+													                  <property name="label">1</property>
+													                </object>
+													              </child>
+													              <style>
+		                                      <class name="card-bg"/>
+	                                      </style>
+													            </object>
+													          </child>
+													          <child>
+													            <object class="GtkBox">
+													              <property name="orientation">vertical</property>
+			                                  <property name="homogeneous">true</property>
+			                                  <property name="width-request">200</property>
+													              <child>
+													                <object class="GtkLabel">
+													                  <property name="vexpand">1</property>
+													                  <property name="hexpand">1</property>
+													                  <property name="valign">end</property>
+													                  <property name="halign">end</property>
+													                  <property name="margin-bottom">12</property>
+													                  <property name="margin-end">12</property>
+													                  <property name="label">2</property>
+													                </object>
+													              </child>
+													              <style>
+		                                      <class name="card-bg"/>
+	                                      </style>
+													            </object>
+													          </child>
+													          <child>
+													            <object class="GtkBox">
+													              <property name="orientation">vertical</property>
+			                                  <property name="homogeneous">true</property>
+			                                  <property name="width-request">200</property>
+													              <child>
+													                <object class="GtkLabel">
+													                  <property name="vexpand">1</property>
+													                  <property name="hexpand">1</property>
+													                  <property name="valign">end</property>
+													                  <property name="halign">end</property>
+													                  <property name="margin-bottom">12</property>
+													                  <property name="margin-end">12</property>
+													                  <property name="label">3</property>
+													                </object>
+													              </child>
+													              <style>
+		                                      <class name="card-bg"/>
+	                                      </style>
+													            </object>
+													          </child>
+													          <child>
+													            <object class="GtkBox">
+													              <property name="orientation">vertical</property>
+			                                  <property name="homogeneous">true</property>
+			                                  <property name="width-request">200</property>
+													              <child>
+													                <object class="GtkLabel">
+													                  <property name="vexpand">1</property>
+													                  <property name="hexpand">1</property>
+													                  <property name="valign">end</property>
+													                  <property name="halign">end</property>
+													                  <property name="margin-bottom">12</property>
+													                  <property name="margin-end">12</property>
+													                  <property name="label">4</property>
+													                </object>
+													              </child>
+													              <style>
+		                                      <class name="card-bg"/>
+	                                      </style>
+													            </object>
+													          </child>
+													        </object>
+													      </child>
+													      <child type="overlay">
+													        <object class="GtkBox" id="card_holder">
+																    <property name="spacing">30</property>
+																    <property name="homogeneous">true</property>
+														      </object>
+													      </child>
+													    </object>
+													  </child>
 														<child>
 															<object class="GtkBox">
 																<property name="vexpand">true</property>

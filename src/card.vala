@@ -23,6 +23,7 @@ namespace Soldunzh {
         public bool is_flipped = false;
 
         public MainWindow mw {get; set;}
+        private Gtk.CssProvider provider = new Gtk.CssProvider();
 
         public Card (string sym, double val, string ctype, string name = "Unknown", string cprop) {
             this.symbol = sym;
@@ -47,8 +48,19 @@ namespace Soldunzh {
                 mw.gauge_hp.text = "%0.0f HP".printf(mw.player.health.val * 100);
                 mw.gauge_sp.text = "%0.0f / %0.0f SP".printf(mw.player.shield.val * 100, mw.player.shield.break_limit * 100);
                 mw.gauge_xp.text = "%0.0f XP".printf(mw.player.exp.val * 100);
-                mw.deck.cards.remove(this);
             });
+            this.get_style_context().add_provider(provider, 999);
+        }
+
+        public void install (double vals, string ctypes) {
+            var val_dec = (Math.floor(vals * 100)).to_string();
+            this.provider.load_from_data ((uint8[]) """
+                .card-icon {
+                  background-image: url(resource://io/github/lainsce/Soldunzh/%s/%s.svg);
+                  background-repeat: no-repeat;
+                  background-position: bottom;
+                }
+            """.printf(ctypes, val_dec));
         }
 
         public void touch (MainWindow mw) {
@@ -73,6 +85,8 @@ namespace Soldunzh {
                   mw.board.update();
                   break;
             }
+
+            mw.deck.cards.remove(this);
         }
     }
 }

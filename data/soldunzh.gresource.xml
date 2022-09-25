@@ -6,8 +6,61 @@
     <file preprocess="xml-stripblanks" alias="card.ui">ui/card.ui</file>
     <file alias="style.css">style.css</file>
     <file alias="style-dark.css">style-dark.css</file>
+
     <file alias="bg.svg">assets/bg.svg</file>
     <file alias="bg-light.svg">assets/bg-light.svg</file>
+
+    <file alias="clove/2.svg">assets/clove/2.svg</file>
+    <file alias="clove/3.svg">assets/clove/3.svg</file>
+    <file alias="clove/4.svg">assets/clove/4.svg</file>
+    <file alias="clove/5.svg">assets/clove/5.svg</file>
+    <file alias="clove/6.svg">assets/clove/6.svg</file>
+    <file alias="clove/7.svg">assets/clove/7.svg</file>
+    <file alias="clove/8.svg">assets/clove/8.svg</file>
+    <file alias="clove/9.svg">assets/clove/9.svg</file>
+    <file alias="clove/10.svg">assets/clove/10.svg</file>
+    <file alias="clove/11.svg">assets/clove/11.svg</file>
+    <file alias="clove/13.svg">assets/clove/13.svg</file>
+    <file alias="clove/15.svg">assets/clove/15.svg</file>
+    <file alias="clove/17.svg">assets/clove/17.svg</file>
+
+    <file alias="spade/2.svg">assets/spade/2.svg</file>
+    <file alias="spade/3.svg">assets/spade/3.svg</file>
+    <file alias="spade/4.svg">assets/spade/4.svg</file>
+    <file alias="spade/5.svg">assets/spade/5.svg</file>
+    <file alias="spade/6.svg">assets/spade/6.svg</file>
+    <file alias="spade/7.svg">assets/spade/7.svg</file>
+    <file alias="spade/8.svg">assets/spade/8.svg</file>
+    <file alias="spade/9.svg">assets/spade/9.svg</file>
+    <file alias="spade/10.svg">assets/spade/10.svg</file>
+    <file alias="spade/11.svg">assets/spade/11.svg</file>
+    <file alias="spade/13.svg">assets/spade/13.svg</file>
+    <file alias="spade/15.svg">assets/spade/15.svg</file>
+    <file alias="spade/17.svg">assets/spade/17.svg</file>
+
+    <file alias="diamond/2.svg">assets/diamond/2.svg</file>
+    <file alias="diamond/3.svg">assets/diamond/3.svg</file>
+    <file alias="diamond/4.svg">assets/diamond/4.svg</file>
+    <file alias="diamond/5.svg">assets/diamond/5.svg</file>
+    <file alias="diamond/6.svg">assets/diamond/6.svg</file>
+    <file alias="diamond/7.svg">assets/diamond/7.svg</file>
+    <file alias="diamond/8.svg">assets/diamond/8.svg</file>
+    <file alias="diamond/9.svg">assets/diamond/9.svg</file>
+    <file alias="diamond/10.svg">assets/diamond/10.svg</file>
+    <file alias="diamond/11.svg">assets/diamond/11.svg</file>
+
+    <file alias="heart/2.svg">assets/heart/2.svg</file>
+    <file alias="heart/3.svg">assets/heart/3.svg</file>
+    <file alias="heart/4.svg">assets/heart/4.svg</file>
+    <file alias="heart/5.svg">assets/heart/5.svg</file>
+    <file alias="heart/6.svg">assets/heart/6.svg</file>
+    <file alias="heart/7.svg">assets/heart/7.svg</file>
+    <file alias="heart/8.svg">assets/heart/8.svg</file>
+    <file alias="heart/9.svg">assets/heart/9.svg</file>
+    <file alias="heart/10.svg">assets/heart/10.svg</file>
+    <file alias="heart/11.svg">assets/heart/11.svg</file>
+
+    <file alias="joker/21.svg">assets/joker/21.svg</file>
   </gresource>
   <gresource prefix="/io/github/lainsce/Soldunzh/icons">
       <file alias="scalable/actions/new-game-symbolic.svg">icons/new-game-symbolic.svg</file>

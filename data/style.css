@@ -28,17 +28,17 @@
 .black-label {
   color: #111;
 }
+.white-label {
+  color: #fff;
+}
 
 .card.flipped {
-  background: #333;
-  box-shadow: 0 0 0 3px #333;
-}
-.flipped * {
-  opacity: 0.2;
+  opacity: 0;
+  transform: translate(0,0);
 }
 
 .suit {
-  font-size: 64px;
+  font-size: 32px;
 }
 
 .opaque-toggle toggle {
@@ -59,11 +59,18 @@
   background: #fff;
   color: #000;
   border-radius: 16px;
-  box-shadow: 0 4px 0 2px #fafafa;
+  transform: translate(0,-4px);
+}
+.card:hover {
+  transform: translate(0,4px);
 }
 
-.card:hover {
-  box-shadow: 0 -4px 0 2px #fafafa;
+.card-bg {
+  background: #fafafa;
+  border-radius: 16px;
+}
+.card-bg label {
+  font-size: 1.5rem;
 }
 
 .timeline {

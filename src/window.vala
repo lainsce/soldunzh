@@ -83,6 +83,7 @@ namespace Soldunzh {
 		            msg = "You enter the Soldunzh lands\nat Easy difficulty.";
 		            timeline.set_text (msg);
 
+                    run_button.visible = true;
 		            run_button.clicked.connect (() => {
                         player.escape_room ();
                     });
@@ -105,6 +106,7 @@ namespace Soldunzh {
 		            msg = "You enter the Soldunzh lands\nat Medium difficulty.";
 		            timeline.set_text (msg);
 
+                    run_button.visible = true;
 		            run_button.clicked.connect (() => {
                         player.escape_room ();
                     });
@@ -127,9 +129,7 @@ namespace Soldunzh {
 		            msg = "You enter the Soldunzh lands\nat Hard difficulty.";
 		            timeline.set_text (msg);
 
-		            run_button.clicked.connect (() => {
-                        player.escape_room ();
-                    });
+		            run_button.visible = false;
 		        }
             });
 	        new_game_button.clicked.connect (() => {

@@ -7,30 +7,18 @@
   background: #fff;
 }
 
+.white-label {
+  color: #fff;
+}
+
 .soldunzh {
   background-color: #111;
   background-image: url(resource://io/github/lainsce/Soldunzh/bg.svg);
-  background-position: 50% 50%;
-  background-repeat: repeat;
 }
 
-.card {
-  background: #fff;
-  color: #000;
-  border-radius: 16px;
-  box-shadow: 0 4px 0 2px #333;
-}
-.card:hover {
-  box-shadow: 0 -4px 0 2px #333;
-  transform: translate(0,4px);
-}
-
-.card.flipped {
+.card-bg {
   background: #333;
-  box-shadow: 0 0 0 3px #333;
-}
-.card.flipped {
-  transform: translate(0,0);
+  color: #000;
 }
 
 .timeline {

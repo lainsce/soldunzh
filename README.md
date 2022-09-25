@@ -38,3 +38,7 @@ Simply clone this repo, then:
 meson _build --prefix=/usr && cd _build
 sudo ninja install
 ```
+
+## Credits
+
+Card face artwork - © 2016 Hundred Rabbits (100r.co)

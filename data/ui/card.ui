@@ -7,22 +7,29 @@
 			  <property name="homogeneous">true</property>
 			  <property name="width-request">200</property>
 			  <child>
-				  <object class="GtkLabel" id="card_strength">
-					  <property name="margin-top">15</property>
-					  <property name="margin-start">15</property>
-					  <property name="halign">start</property>
+			    <object class="GtkBox">
+			      <property name="orientation">vertical</property>
+			      <property name="halign">start</property>
 				    <property name="valign">start</property>
-					  <style>
-						  <class name="title-1"/>
-					  </style>
-				  </object>
-			  </child>
-			  <child>
-				  <object class="GtkLabel" id="card_suit">
-					  <style>
-						  <class name="suit"/>
-					  </style>
-				  </object>
+			      <property name="margin-top">15</property>
+			      <property name="margin-start">15</property>
+			      <child>
+				      <object class="GtkLabel" id="card_suit">
+				        <property name="halign">center</property>
+					      <style>
+						      <class name="suit"/>
+					      </style>
+				      </object>
+			      </child>
+			      <child>
+			        <object class="GtkLabel" id="card_strength">
+					      <property name="halign">center</property>
+					      <style>
+						      <class name="title-1"/>
+					      </style>
+				      </object>
+			      </child>
+			    </object>
 			  </child>
 			  <child>
 				  <object class="GtkLabel" id="card_name">
@@ -38,6 +45,7 @@
 	  </child>
 	  <style>
 		  <class name="card"/>
+	    <class name="card-icon"/>
 	  </style>
   </template>
 </interface>

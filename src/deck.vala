@@ -90,7 +90,22 @@ namespace Soldunzh {
                 i = (int)Math.floor(rand.int_range(0, 51)); break;
             }
 
-            return draw_pile.slice(i,i+1)[0];
+            var card = draw_pile.slice(i,i+1)[0];
+            if (card.val > 0.10 && card.val != 0.21) {
+                card.remove_css_class ("red-label");
+                card.remove_css_class ("black-label");
+                card.add_css_class ("white-label");
+            } else {
+                if (card.ctype == DIAMOND || card.ctype == HEART) {
+                    card.card_name.add_css_class ("red-label");
+                    card.card_name.remove_css_class ("black-label");
+                } else if (card.ctype == CLOVE || card.ctype == SPADE) {
+                    card.card_name.add_css_class ("black-label");
+                    card.card_name.remove_css_class ("red-label");
+                }
+            }
+            card.install (card.val, card.ctype);
+            return card;
         }
 
       public void return_card (Card card) {
@@ -110,3 +125,4 @@ namespace Soldunzh {
       }
     }
 }
+
