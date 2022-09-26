@@ -41,6 +41,6 @@ sudo ninja install
 
 ## Credits
 
-Card face artwork - © 2016 Hundred Rabbits (100r.co)
+Card face artwork (1 thru 10) - © 2016 Hundred Rabbits (100r.co)
 
 Based on [Donsol (JS version)](https://github.com/neauoire/donsol-js)
