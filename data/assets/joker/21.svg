@@ -23,7 +23,7 @@
      inkscape:deskcolor="#d1d1d1"
      showgrid="false"
      inkscape:zoom="2.6066667"
-     inkscape:cx="86.125319"
+     inkscape:cx="86.317134"
      inkscape:cy="150"
      inkscape:window-width="2560"
      inkscape:window-height="1011"
@@ -31,6 +31,11 @@
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg8" />
+  <path
+     d="m 175,175 a 100,120 0 0 0 -150,0 100,120 0 0 0 150,0"
+     class="fill_red"
+     id="path2-6"
+     style="fill:#fe2d53;fill-opacity:1" />
   <path
      d="m 100,100 a 120,100 0 0 0 0,150 120,100 0 0 0 0,-150"
      class="fill_red"

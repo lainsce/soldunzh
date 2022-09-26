@@ -3,7 +3,7 @@
    version="1.1"
    width="200"
    height="300"
-   id="svg34"
+   id="svg4"
    sodipodi:docname="13.svg"
    inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -11,9 +11,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg">
   <defs
-     id="defs38" />
+     id="defs8" />
   <sodipodi:namedview
-     id="namedview36"
+     id="namedview6"
      pagecolor="#ffffff"
      bordercolor="#000000"
      borderopacity="0.25"
@@ -23,128 +23,31 @@
      inkscape:deskcolor="#d1d1d1"
      showgrid="false"
      inkscape:zoom="2.6066667"
-     inkscape:cx="100.31969"
-     inkscape:cy="134.2711"
+     inkscape:cx="92.071611"
+     inkscape:cy="150"
      inkscape:window-width="2560"
      inkscape:window-height="1011"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg34" />
-  <circle
-     cx="125"
-     cy="115"
-     r="60"
-     class="fill_black"
-     id="circle2" />
-  <circle
-     cx="75"
-     cy="115"
-     r="60"
-     class="fill_black"
-     id="circle4" />
-  <!-- Head -->
-  <!-- Body -->
-  <path
-     d="m 20,300 v -50 a 15,15 0 0 1 15,-15 h 25 a 25,25 0 0 0 25,-25 v -50 h 30 v 50 a 25,25 0 0 0 25,25 h 25 a 15,15 0 0 1 15,15 v 50"
-     class="fill_black"
-     id="path6" />
-  <line
-     x1="0"
-     y1="210"
-     x2="300"
-     y2="210"
-     stroke-width="2px"
-     class="stroke_white"
-     stroke-linecap="round"
-     id="line8" />
-  <line
-     x1="0"
-     y1="220"
-     x2="300"
-     y2="220"
-     stroke-width="2px"
-     class="stroke_white"
-     stroke-linecap="round"
-     id="line10" />
-  <path
-     d="m 95,210 a 5,5 0 1 0 10,0"
-     stroke-width="0px"
-     class="fill_white"
-     id="path12"
-     style="fill:#ffffff" />
-  <!-- Face -->
-  <path
-     d="m 62.5,145 a 37.5,37.5 0 1 0 75,0 A 37.5,37.5 0 0 1 100,107.5 37.5,37.5 0 0 1 62.5,145"
-     class="fill_white"
-     id="path14"
-     style="fill:#ffffff" />
-  <!-- Eyes -->
-  <line
-     x1="70"
-     y1="150"
-     x2="90"
-     y2="150"
-     stroke-width="2px"
-     class="stroke_black"
-     stroke-linecap="round"
-     id="line16" />
-  <line
-     x1="110"
-     y1="150"
-     x2="130"
-     y2="150"
-     stroke-width="2px"
-     class="stroke_black"
-     stroke-linecap="round"
-     id="line18" />
-  <path
-     d="m 75,150 a 5,5 0 1 0 10,0"
-     stroke-width="2px"
-     class="stroke_black fill_black"
-     stroke-linecap="butt"
-     id="path20" />
-  <path
-     d="m 115,150 a 5,5 0 1 0 10,0"
-     stroke-width="2px"
-     class="stroke_black fill_black"
-     stroke-linecap="butt"
-     id="path22" />
-  <circle
-     cx="90"
-     cy="140"
-     r="3"
-     class="fill_grey"
-     id="circle24"
-     style="fill:#b3b3b3" />
-  <circle
-     cx="110"
-     cy="140"
-     r="3"
-     class="fill_grey"
-     id="circle26"
-     style="fill:#b3b3b3" />
-  <!-- nose -->
-  <path
-     d="m 95,160 a 5,5 0 1 0 10,0"
-     stroke-width="0px"
-     class="fill_grey"
-     id="path28"
-     style="fill:#b3b3b3" />
-  <!-- mouth -->
+     inkscape:current-layer="svg4" />
   <circle
      cx="100"
      cy="175"
-     r="3"
+     r="50"
      class="fill_black"
-     stroke-width="0px"
-     id="circle30" />
-  <!-- dot -->
+     id="circle2" />
   <circle
      cx="100"
-     cy="90"
-     r="5"
-     class="fill_white"
-     id="circle32"
-     style="fill:#ffffff" />
+     cy="175"
+     class="fill_black"
+     id="circle2-3"
+     style="stroke-width:0.5;fill:#ffffff"
+     r="25" />
+  <circle
+     style="fill:#000000;stroke-width:1.5121"
+     id="path1707"
+     cx="100"
+     cy="102.5"
+     r="12.5" />
 </svg>
