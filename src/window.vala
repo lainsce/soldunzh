@@ -63,6 +63,14 @@ namespace Soldunzh {
         }
 
         construct {
+            var tri = Gtk.ShortcutTrigger.parse_string ("Escape");
+            var act = Gtk.ShortcutAction.parse_string ("activate");
+            Gtk.Shortcut sh = new Gtk.Shortcut(tri, act);
+            Gtk.ShortcutController shctl = new Gtk.ShortcutController();
+            shctl.add_shortcut (sh);
+            shctl.set_scope (Gtk.ShortcutScope.MANAGED);
+            run_button.add_controller(shctl);
+
 	        start_game_button.clicked.connect (() => {
 		        if (easy_button.active) {
 		            stack.set_visible_child_name ("game");
@@ -159,3 +167,4 @@ namespace Soldunzh {
         }
     }
 }
+

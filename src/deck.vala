@@ -1,3 +1,22 @@
+/*
+ * Copyright 2022 Lains
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
+
 namespace Soldunzh {
     public class Deck : Object {
         public Gee.ArrayList<Card> cards = new Gee.ArrayList<Card>();
@@ -79,6 +98,7 @@ namespace Soldunzh {
             var rand = new GLib.Rand ();
             switch (type) {
               case HEART:
+              case "":
                 i = (int)Math.floor(rand.int_range(0, 12)); break;
               case DIAMOND:
                 i = (int)Math.floor(rand.int_range(13, 25)); break;
@@ -86,26 +106,43 @@ namespace Soldunzh {
                 i = (int)Math.floor(rand.int_range(26, 38)); break;
               case SPADE:
                 i = (int)Math.floor(rand.int_range(39, 51)); break;
-              case "":
-                i = (int)Math.floor(rand.int_range(0, 51)); break;
             }
 
-            var card = draw_pile.slice(i,i+1)[0];
-            if (card.val > 0.10 && card.val != 0.21) {
-                card.remove_css_class ("red-label");
-                card.remove_css_class ("black-label");
-                card.add_css_class ("white-label");
-            } else {
-                if (card.ctype == DIAMOND || card.ctype == HEART) {
-                    card.card_name.add_css_class ("red-label");
-                    card.card_name.remove_css_class ("black-label");
-                } else if (card.ctype == CLOVE || card.ctype == SPADE) {
-                    card.card_name.add_css_class ("black-label");
-                    card.card_name.remove_css_class ("red-label");
+            if (i == draw_pile.size) {
+                var card = draw_pile.slice(i,i-1)[0];
+                if (card.val > 0.10 && card.val != 0.21) {
+                    card.remove_css_class ("red-label");
+                    card.remove_css_class ("black-label");
+                    card.add_css_class ("white-label");
+                } else {
+                    if (card.ctype == DIAMOND || card.ctype == HEART) {
+                        card.card_name.add_css_class ("red-label");
+                        card.card_name.remove_css_class ("black-label");
+                    } else if (card.ctype == CLOVE || card.ctype == SPADE) {
+                        card.card_name.add_css_class ("black-label");
+                        card.card_name.remove_css_class ("red-label");
+                    }
                 }
+                card.install (card.val, card.ctype);
+                return card;
+            } else {
+                var card = draw_pile.slice(i,i+1)[0];
+                if (card.val > 0.10 && card.val != 0.21) {
+                    card.remove_css_class ("red-label");
+                    card.remove_css_class ("black-label");
+                    card.add_css_class ("white-label");
+                } else {
+                    if (card.ctype == DIAMOND || card.ctype == HEART) {
+                        card.card_name.add_css_class ("red-label");
+                        card.card_name.remove_css_class ("black-label");
+                    } else if (card.ctype == CLOVE || card.ctype == SPADE) {
+                        card.card_name.add_css_class ("black-label");
+                        card.card_name.remove_css_class ("red-label");
+                    }
+                }
+                card.install (card.val, card.ctype);
+                return card;
             }
-            card.install (card.val, card.ctype);
-            return card;
         }
 
       public void return_card (Card card) {

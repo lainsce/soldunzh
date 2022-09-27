@@ -1,31 +1,59 @@
+/*
+ * Copyright 2022 Lains
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ */
+
 namespace Soldunzh {
     public class Board : Object {
         public Gee.ArrayList<Card> room = new Gee.ArrayList<Card>();
         MainWindow mw = null;
+        private uint board_refresh_id;
+
         public Board (MainWindow mw) {
             this.mw = mw;
         }
 
-        public void enter_room (bool starting_hand) {
+        public void enter_room (bool? starting_hand) {
             remove_cards ();
 
             if (mw.deck.cards.size > 0) {
-              add_card (0, mw.deck.draw_card(starting_hand ? DIAMOND : ""));
+                add_card (0, mw.deck.draw_card(starting_hand ? DIAMOND : ""));
+                this.room[0].remove_css_class ("flipped");
+                make_card (this.room[0]);
+                make_keybind (this.room[0], "1");
             }
             if (mw.deck.cards.size > 0) {
-              add_card (1, mw.deck.draw_card(starting_hand ? CLOVE : ""));
+                add_card (1, mw.deck.draw_card(starting_hand ? CLOVE : ""));
+                this.room[1].remove_css_class ("flipped");
+                make_card (this.room[1]);
+                make_keybind (this.room[1], "2");
             }
             if (mw.deck.cards.size > 0) {
-              add_card (2, mw.deck.draw_card(starting_hand ? HEART : ""));
+                add_card (2, mw.deck.draw_card(starting_hand ? HEART : ""));
+                this.room[2].remove_css_class ("flipped");
+                make_card (this.room[2]);
+                make_keybind (this.room[2], "3");
             }
             if (mw.deck.cards.size > 0) {
-              add_card (3, mw.deck.draw_card(starting_hand ? SPADE : ""));
+                add_card (3, mw.deck.draw_card(starting_hand ? SPADE : ""));
+                this.room[3].remove_css_class ("flipped");
+                make_card (this.room[3]);
+                make_keybind (this.room[3], "4");
             }
-
-            this.room[0].remove_css_class ("flipped");
-            this.room[1].remove_css_class ("flipped");
-            this.room[2].remove_css_class ("flipped");
-            this.room[3].remove_css_class ("flipped");
 
             mw.player.update(mw, mw.player.health.val, mw.player.shield.val, mw.player.exp.val);
             this.update();
@@ -56,7 +84,7 @@ namespace Soldunzh {
         }
 
         public void update () {
-            if (mw.player.health.val < 0.001) {
+            if (mw.player.health.val < 0.01) {
               return;
             }
 
@@ -65,17 +93,8 @@ namespace Soldunzh {
               return;
             }
             if (this.room[0].is_flipped && this.room[1].is_flipped && this.room[2].is_flipped && this.room[3].is_flipped) {
-              Timeout.add (5, () => { mw.board.is_complete (); return false; });
+              board_refresh_id = Timeout.add (50, () => { mw.board.is_complete (); return true; });
             }
-
-            var card1 = this.room[0];
-            var card2 = this.room[1];
-            var card3 = this.room[2];
-            var card4 = this.room[3];
-            make_card (card1);
-            make_card (card2);
-            make_card (card3);
-            make_card (card4);
         }
 
         private void make_card (Card card) {
@@ -114,6 +133,16 @@ namespace Soldunzh {
             }
         }
 
+        public void make_keybind (Card card, string num) {
+            var tri = Gtk.ShortcutTrigger.parse_string (num);
+            var act = Gtk.ShortcutAction.parse_string("activate");
+            Gtk.Shortcut sh = new Gtk.Shortcut(tri, act);
+            Gtk.ShortcutController shctl = new Gtk.ShortcutController();
+            shctl.add_shortcut (sh);
+            shctl.set_scope (Gtk.ShortcutScope.MANAGED);
+            card.add_controller(shctl);
+        }
+
         public void dungeon_complete () {
             mw.is_complete = true;
             this.room[0].add_css_class ("flipped");
@@ -142,7 +171,8 @@ namespace Soldunzh {
 
         public void is_complete () {
             mw.player.has_escaped = false;
-            this.enter_room (false);
+            this.enter_room (true);
+            GLib.Source.remove(board_refresh_id);
         }
 
         public void dungeon_failed () {
@@ -154,10 +184,10 @@ namespace Soldunzh {
         }
         public Gee.ArrayList<Card> cards_flipped () {
             Gee.ArrayList<Card> a = new Gee.ArrayList<Card>();
-            if (this.room[0] != null && this.room[0].is_flipped) { a.add(this.room[0]); }
-            if (this.room[1] != null && this.room[1].is_flipped) { a.add(this.room[1]); }
-            if (this.room[2] != null && this.room[2].is_flipped) { a.add(this.room[2]); }
-            if (this.room[3] != null && this.room[3].is_flipped) { a.add(this.room[3]); }
+            if (this.room[0].is_flipped) { a.add(this.room[0]); }
+            if (this.room[1].is_flipped) { a.add(this.room[1]); }
+            if (this.room[2].is_flipped) { a.add(this.room[2]); }
+            if (this.room[3].is_flipped) { a.add(this.room[3]); }
             return a;
         }
 
@@ -166,10 +196,10 @@ namespace Soldunzh {
         }
         public Gee.ArrayList<Card> cards_monsters () {
             Gee.ArrayList<Card> a = new Gee.ArrayList<Card>();
-            if (this.room[0] != null && this.room[0].cprop == "monster" && this.room[0].is_flipped == false) { a.add(this.room[0]); }
-            if (this.room[1] != null && this.room[1].cprop == "monster" && this.room[1].is_flipped == false) { a.add(this.room[1]); }
-            if (this.room[2] != null && this.room[2].cprop == "monster" && this.room[2].is_flipped == false) { a.add(this.room[2]); }
-            if (this.room[3] != null && this.room[3].cprop == "monster" && this.room[3].is_flipped == false) { a.add(this.room[3]); }
+            if (this.room[0].cprop == "monster" && this.room[0].is_flipped == false) { a.add(this.room[0]); }
+            if (this.room[1].cprop == "monster" && this.room[1].is_flipped == false) { a.add(this.room[1]); }
+            if (this.room[2].cprop == "monster" && this.room[2].is_flipped == false) { a.add(this.room[2]); }
+            if (this.room[3].cprop == "monster" && this.room[3].is_flipped == false) { a.add(this.room[3]); }
             return a;
         }
     }
