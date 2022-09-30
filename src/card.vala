@@ -85,7 +85,7 @@ namespace Soldunzh {
         public void touch (MainWindow mw) {
             if (this.is_flipped) { return; };
             this.is_flipped = true;
-            if (mw.player.health.val < 0.001) { mw.msg = "Player has expired…"; mw.timeline.set_text (mw.msg); };
+            if (mw.player.health.val < 0.01) { mw.msg = "Player has expired…"; mw.timeline.set_text (mw.msg); };
 
             switch (cprop) {
               case "monster":
